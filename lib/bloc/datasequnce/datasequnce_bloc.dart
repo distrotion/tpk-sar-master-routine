@@ -44,8 +44,8 @@ Stream<List<MainStrucTableTap1_MR>> selectData_fn_MR(
     List<MainStrucTableTap1_MR> state) async* {
   print("SELECT FUNCTION BLOC");
   String input = "hi data";
-  final response =
-      await http.post(Uri.parse(server + "user_query"), body: input);
+  final response = await http
+      .post(Uri.parse(server + "Routine_MasterCustomer_query"), body: input);
 
   var data_input = [];
   if (response.statusCode == 200) {
@@ -60,16 +60,26 @@ Stream<List<MainStrucTableTap1_MR>> selectData_fn_MR(
   for (var i = 0; i < data_input.length; i++) {
     stateoutput.add(MainStrucTableTap1_MR(
       number: data_input[i]['Id'].toString(),
-      field01: data_input[i]['Username'].toString(),
-      field02: data_input[i]['Password'].toString(),
-      field03: data_input[i]['Name'].toString(),
-      field04: data_input[i]['Section'].toString(),
-      field05: data_input[i]['RoleId'].toString(),
-      field06: "",
-      field07: "",
-      field08: "",
-      field09: "",
-      field10: "",
+      field01: data_input[i]['CustId'].toString(),
+      field02: data_input[i]['CustFull'].toString(),
+      field03: data_input[i]['Branch'].toString(),
+      field04: data_input[i]['Code'].toString(),
+      field05: data_input[i]['FrequencyRequest'].toString(),
+      field06: data_input[i]['Incharge'].toString(),
+      field07: data_input[i]['SubLeader'].toString(),
+      field08: data_input[i]['GL'].toString(),
+      field09: data_input[i]['JP'].toString(),
+      field10: data_input[i]['DMG'].toString(),
+      field11: "",
+      field12: "",
+      field13: "",
+      field14: "",
+      field15: "",
+      field16: "",
+      field17: "",
+      field18: "",
+      field19: "",
+      field20: "",
     ));
   }
 
@@ -83,20 +93,26 @@ Stream<List<MainStrucTableTap1_MR>> updateData_fn_MR(
 
   var input_init = {
     "Id": EditDataTable1buffer_MR.number,
-    "Username": EditDataTable1buffer_MR.field01,
-    "Password": EditDataTable1buffer_MR.field02,
-    "Name": EditDataTable1buffer_MR.field03,
-    "Section": EditDataTable1buffer_MR.field04,
-    "RoleId": EditDataTable1buffer_MR.field05
+    "CustId": EditDataTable1buffer_MR.field01,
+    "CustFull": EditDataTable1buffer_MR.field02,
+    "Branch": EditDataTable1buffer_MR.field03,
+    "Code": EditDataTable1buffer_MR.field04,
+    "FrequencyRequest": EditDataTable1buffer_MR.field05,
+    "Incharge": EditDataTable1buffer_MR.field06,
+    "SubLeader": EditDataTable1buffer_MR.field07,
+    "GL": EditDataTable1buffer_MR.field08,
+    "JP": EditDataTable1buffer_MR.field09,
+    "DMG": EditDataTable1buffer_MR.field10,
   };
 
-  final response_init =
-      await http.post(Uri.parse(server + "user_update"), body: input_init);
+  final response_init = await http.post(
+      Uri.parse(server + "Routine_MasterCustomer_update"),
+      body: input_init);
   //-------------------------------------------------------------------------
   print("SELECT FUNCTION BLOC");
   String input = "hi data";
-  final response =
-      await http.post(Uri.parse(server + "user_query"), body: input);
+  final response = await http
+      .post(Uri.parse(server + "Routine_MasterCustomer_query"), body: input);
 
   var data_input = [];
   if (response.statusCode == 200) {
@@ -111,16 +127,26 @@ Stream<List<MainStrucTableTap1_MR>> updateData_fn_MR(
   for (var i = 0; i < data_input.length; i++) {
     stateoutput.add(MainStrucTableTap1_MR(
       number: data_input[i]['Id'].toString(),
-      field01: data_input[i]['Username'].toString(),
-      field02: data_input[i]['Password'].toString(),
-      field03: data_input[i]['Name'].toString(),
-      field04: data_input[i]['Section'].toString(),
-      field05: data_input[i]['RoleId'].toString(),
-      field06: "",
-      field07: "",
-      field08: "",
-      field09: "",
-      field10: "",
+      field01: data_input[i]['CustId'].toString(),
+      field02: data_input[i]['CustFull'].toString(),
+      field03: data_input[i]['Branch'].toString(),
+      field04: data_input[i]['Code'].toString(),
+      field05: data_input[i]['FrequencyRequest'].toString(),
+      field06: data_input[i]['Incharge'].toString(),
+      field07: data_input[i]['SubLeader'].toString(),
+      field08: data_input[i]['GL'].toString(),
+      field09: data_input[i]['JP'].toString(),
+      field10: data_input[i]['DMG'].toString(),
+      field11: "",
+      field12: "",
+      field13: "",
+      field14: "",
+      field15: "",
+      field16: "",
+      field17: "",
+      field18: "",
+      field19: "",
+      field20: "",
     ));
   }
 
@@ -133,21 +159,27 @@ Stream<List<MainStrucTableTap1_MR>> deleteData_fn_MR(
     List<MainStrucTableTap1_MR> state) async* {
   print("DELETE FUNCTION BLOC");
   var input_init = {
-    "Id": DeleteDataTable1buffer_MR.number,
-    "Username": DeleteDataTable1buffer_MR.field01,
-    "Password": DeleteDataTable1buffer_MR.field02,
-    "Name": DeleteDataTable1buffer_MR.field03,
-    "Section": DeleteDataTable1buffer_MR.field04,
-    "RoleId": DeleteDataTable1buffer_MR.field05
+    "Id": EditDataTable1buffer_MR.number,
+    "CustId": EditDataTable1buffer_MR.field01,
+    "CustFull": EditDataTable1buffer_MR.field02,
+    "Branch": EditDataTable1buffer_MR.field03,
+    "Code": EditDataTable1buffer_MR.field04,
+    "FrequencyRequest": EditDataTable1buffer_MR.field05,
+    "Incharge": EditDataTable1buffer_MR.field06,
+    "SubLeader": EditDataTable1buffer_MR.field07,
+    "GL": EditDataTable1buffer_MR.field08,
+    "JP": EditDataTable1buffer_MR.field09,
+    "DMG": EditDataTable1buffer_MR.field10,
   };
 
-  final response_init =
-      await http.post(Uri.parse(server + "user_delete"), body: input_init);
+  final response_init = await http.post(
+      Uri.parse(server + "Routine_MasterCustomer_delete"),
+      body: input_init);
   //-------------------------------------------------------------------------
   String input = "hi data";
   print("SELECT FUNCTION BLOC");
-  final response =
-      await http.post(Uri.parse(server + "user_query"), body: input);
+  final response = await http
+      .post(Uri.parse(server + "Routine_MasterCustomer_query"), body: input);
 
   var data_input = [];
   if (response.statusCode == 200) {
@@ -162,16 +194,26 @@ Stream<List<MainStrucTableTap1_MR>> deleteData_fn_MR(
   for (var i = 0; i < data_input.length; i++) {
     stateoutput.add(MainStrucTableTap1_MR(
       number: data_input[i]['Id'].toString(),
-      field01: data_input[i]['Username'].toString(),
-      field02: data_input[i]['Password'].toString(),
-      field03: data_input[i]['Name'].toString(),
-      field04: data_input[i]['Section'].toString(),
-      field05: data_input[i]['RoleId'].toString(),
-      field06: "",
-      field07: "",
-      field08: "",
-      field09: "",
-      field10: "",
+      field01: data_input[i]['CustId'].toString(),
+      field02: data_input[i]['CustFull'].toString(),
+      field03: data_input[i]['Branch'].toString(),
+      field04: data_input[i]['Code'].toString(),
+      field05: data_input[i]['FrequencyRequest'].toString(),
+      field06: data_input[i]['Incharge'].toString(),
+      field07: data_input[i]['SubLeader'].toString(),
+      field08: data_input[i]['GL'].toString(),
+      field09: data_input[i]['JP'].toString(),
+      field10: data_input[i]['DMG'].toString(),
+      field11: "",
+      field12: "",
+      field13: "",
+      field14: "",
+      field15: "",
+      field16: "",
+      field17: "",
+      field18: "",
+      field19: "",
+      field20: "",
     ));
   }
 
@@ -184,21 +226,27 @@ Stream<List<MainStrucTableTap1_MR>> InsertData_fn_MR(
     List<MainStrucTableTap1_MR> state) async* {
   print("INSERT FUNCTION BLOC");
   var input_init = {
-    "Id": "insert",
-    "Username": EditDataTable1buffer_MR.field01,
-    "Password": EditDataTable1buffer_MR.field02,
-    "Name": EditDataTable1buffer_MR.field03,
-    "Section": EditDataTable1buffer_MR.field04,
-    "RoleId": EditDataTable1buffer_MR.field05
+    "Id": EditDataTable1buffer_MR.number,
+    "CustId": EditDataTable1buffer_MR.field01,
+    "CustFull": EditDataTable1buffer_MR.field02,
+    "Branch": EditDataTable1buffer_MR.field03,
+    "Code": EditDataTable1buffer_MR.field04,
+    "FrequencyRequest": EditDataTable1buffer_MR.field05,
+    "Incharge": EditDataTable1buffer_MR.field06,
+    "SubLeader": EditDataTable1buffer_MR.field07,
+    "GL": EditDataTable1buffer_MR.field08,
+    "JP": EditDataTable1buffer_MR.field09,
+    "DMG": EditDataTable1buffer_MR.field10,
   };
 
-  final response_init =
-      await http.post(Uri.parse(server + "user_insert"), body: input_init);
+  final response_init = await http.post(
+      Uri.parse(server + "Routine_MasterCustomer_insert"),
+      body: input_init);
   //-------------------------------------------------------------------------
   String input = "hi data";
   print("SELECT FUNCTION BLOC");
-  final response =
-      await http.post(Uri.parse(server + "user_query"), body: input);
+  final response = await http
+      .post(Uri.parse(server + "Routine_MasterCustomer_query"), body: input);
 
   var data_input = [];
   if (response.statusCode == 200) {
@@ -213,16 +261,26 @@ Stream<List<MainStrucTableTap1_MR>> InsertData_fn_MR(
   for (var i = 0; i < data_input.length; i++) {
     stateoutput.add(MainStrucTableTap1_MR(
       number: data_input[i]['Id'].toString(),
-      field01: data_input[i]['Username'].toString(),
-      field02: data_input[i]['Password'].toString(),
-      field03: data_input[i]['Name'].toString(),
-      field04: data_input[i]['Section'].toString(),
-      field05: data_input[i]['RoleId'].toString(),
-      field06: "",
-      field07: "",
-      field08: "",
-      field09: "",
-      field10: "",
+      field01: data_input[i]['CustId'].toString(),
+      field02: data_input[i]['CustFull'].toString(),
+      field03: data_input[i]['Branch'].toString(),
+      field04: data_input[i]['Code'].toString(),
+      field05: data_input[i]['FrequencyRequest'].toString(),
+      field06: data_input[i]['Incharge'].toString(),
+      field07: data_input[i]['SubLeader'].toString(),
+      field08: data_input[i]['GL'].toString(),
+      field09: data_input[i]['JP'].toString(),
+      field10: data_input[i]['DMG'].toString(),
+      field11: "",
+      field12: "",
+      field13: "",
+      field14: "",
+      field15: "",
+      field16: "",
+      field17: "",
+      field18: "",
+      field19: "",
+      field20: "",
     ));
   }
 
@@ -256,8 +314,8 @@ Stream<List<MainStrucTableTap2_MR>> selectData2_fn_MR(
     List<MainStrucTableTap2_MR> state) async* {
   print("SELECT FUNCTION BLOC 2");
   String input = "hi data";
-  final response =
-      await http.post(Uri.parse(server + "Customer_Data_query"), body: input);
+  final response = await http
+      .post(Uri.parse(server + "Routine_MasterLab_query"), body: input);
 
   var data_input = [];
   if (response.statusCode == 200) {
@@ -275,13 +333,23 @@ Stream<List<MainStrucTableTap2_MR>> selectData2_fn_MR(
       field01: data_input[i]['CustId'].toString(),
       field02: data_input[i]['CustFull'].toString(),
       field03: data_input[i]['CustShort'].toString(),
-      field04: data_input[i]['Branch'].toString(),
-      field05: data_input[i]['CODE'].toString(),
-      field06: "",
-      field07: "",
-      field08: "",
-      field09: "",
-      field10: "",
+      field04: data_input[i]['FrequencyRequest'].toString(),
+      field05: data_input[i]['SampleGroup'].toString(),
+      field06: data_input[i]['SampleType'].toString(),
+      field07: data_input[i]['SampleTank'].toString(),
+      field08: data_input[i]['SampleName'].toString(),
+      field09: data_input[i]['Frequency'].toString(),
+      field10: data_input[i]['ItemNo'].toString(),
+      field11: data_input[i]['Instrument'].toString(),
+      field12: data_input[i]['ItemName'].toString(),
+      field13: data_input[i]['Position'].toString(),
+      field14: data_input[i]['Mag'].toString(),
+      field15: data_input[i]['Temp'].toString(),
+      field16: data_input[i]['StdFactor'].toString(),
+      field17: data_input[i]['StdMax'].toString(),
+      field18: data_input[i]['StdMin'].toString(),
+      field19: "",
+      field20: "",
     ));
   }
 
@@ -298,18 +366,31 @@ Stream<List<MainStrucTableTap2_MR>> updateData2_fn_MR(
     "CustId": EditDataTable2buffer_MR.field01,
     "CustFull": EditDataTable2buffer_MR.field02,
     "CustShort": EditDataTable2buffer_MR.field03,
-    "Branch": EditDataTable2buffer_MR.field04,
-    "CODE": EditDataTable2buffer_MR.field05
+    "FrequencyRequest": EditDataTable2buffer_MR.field04,
+    "SampleGroup": EditDataTable2buffer_MR.field05,
+    "SampleType": EditDataTable2buffer_MR.field06,
+    "SampleTank": EditDataTable2buffer_MR.field07,
+    "SampleName": EditDataTable2buffer_MR.field08,
+    "Frequency": EditDataTable2buffer_MR.field09,
+    "ItemNo": EditDataTable2buffer_MR.field10,
+    "Instrument": EditDataTable2buffer_MR.field11,
+    "ItemName": EditDataTable2buffer_MR.field12,
+    "Position": EditDataTable2buffer_MR.field13,
+    "Mag": EditDataTable2buffer_MR.field14,
+    "Temp": EditDataTable2buffer_MR.field15,
+    "StdFactor": EditDataTable2buffer_MR.field16,
+    "StdMax": EditDataTable2buffer_MR.field17,
+    "StdMin": EditDataTable2buffer_MR.field18,
   };
 
   final response_init = await http
-      .post(Uri.parse(server + "Custommer_data_update"), body: input_init);
+      .post(Uri.parse(server + "Routine_MasterLab_update"), body: input_init);
 
   //------------------------------------------------------------------------------
 
   String input = "hi data";
-  final response =
-      await http.post(Uri.parse(server + "Customer_Data_query"), body: input);
+  final response = await http
+      .post(Uri.parse(server + "Routine_MasterLab_query"), body: input);
 
   var data_input = [];
   if (response.statusCode == 200) {
@@ -327,13 +408,23 @@ Stream<List<MainStrucTableTap2_MR>> updateData2_fn_MR(
       field01: data_input[i]['CustId'].toString(),
       field02: data_input[i]['CustFull'].toString(),
       field03: data_input[i]['CustShort'].toString(),
-      field04: data_input[i]['Branch'].toString(),
-      field05: data_input[i]['CODE'].toString(),
-      field06: "",
-      field07: "",
-      field08: "",
-      field09: "",
-      field10: "",
+      field04: data_input[i]['FrequencyRequest'].toString(),
+      field05: data_input[i]['SampleGroup'].toString(),
+      field06: data_input[i]['SampleType'].toString(),
+      field07: data_input[i]['SampleTank'].toString(),
+      field08: data_input[i]['SampleName'].toString(),
+      field09: data_input[i]['Frequency'].toString(),
+      field10: data_input[i]['ItemNo'].toString(),
+      field11: data_input[i]['Instrument'].toString(),
+      field12: data_input[i]['ItemName'].toString(),
+      field13: data_input[i]['Position'].toString(),
+      field14: data_input[i]['Mag'].toString(),
+      field15: data_input[i]['Temp'].toString(),
+      field16: data_input[i]['StdFactor'].toString(),
+      field17: data_input[i]['StdMax'].toString(),
+      field18: data_input[i]['StdMin'].toString(),
+      field19: "",
+      field20: "",
     ));
   }
 
@@ -345,21 +436,34 @@ Stream<List<MainStrucTableTap2_MR>> deleteData2_fn_MR(
     List<MainStrucTableTap2_MR> state) async* {
   print("DELETE FUNCTION BLOC 2");
   var input_init = {
-    "Id": DeleteDataTable2buffer_MR.number,
-    "CustId": DeleteDataTable2buffer_MR.field01,
-    "CustFull": DeleteDataTable2buffer_MR.field02,
-    "CustShort": DeleteDataTable2buffer_MR.field03,
-    "Branch": DeleteDataTable2buffer_MR.field04,
-    "CODE": DeleteDataTable2buffer_MR.field05
+    "Id": EditDataTable2buffer_MR.number,
+    "CustId": EditDataTable2buffer_MR.field01,
+    "CustFull": EditDataTable2buffer_MR.field02,
+    "CustShort": EditDataTable2buffer_MR.field03,
+    "FrequencyRequest": EditDataTable2buffer_MR.field04,
+    "SampleGroup": EditDataTable2buffer_MR.field05,
+    "SampleType": EditDataTable2buffer_MR.field06,
+    "SampleTank": EditDataTable2buffer_MR.field07,
+    "SampleName": EditDataTable2buffer_MR.field08,
+    "Frequency": EditDataTable2buffer_MR.field09,
+    "ItemNo": EditDataTable2buffer_MR.field10,
+    "Instrument": EditDataTable2buffer_MR.field11,
+    "ItemName": EditDataTable2buffer_MR.field12,
+    "Position": EditDataTable2buffer_MR.field13,
+    "Mag": EditDataTable2buffer_MR.field14,
+    "Temp": EditDataTable2buffer_MR.field15,
+    "StdFactor": EditDataTable2buffer_MR.field16,
+    "StdMax": EditDataTable2buffer_MR.field17,
+    "StdMin": EditDataTable2buffer_MR.field18,
   };
 
   final response_init = await http
-      .post(Uri.parse(server + "Custommer_data_delete"), body: input_init);
+      .post(Uri.parse(server + "Routine_MasterLab_delete"), body: input_init);
   //------------------------------------------------------------------------------
 
   String input = "hi data";
-  final response =
-      await http.post(Uri.parse(server + "Customer_Data_query"), body: input);
+  final response = await http
+      .post(Uri.parse(server + "Routine_MasterLab_query"), body: input);
 
   var data_input = [];
   if (response.statusCode == 200) {
@@ -377,13 +481,23 @@ Stream<List<MainStrucTableTap2_MR>> deleteData2_fn_MR(
       field01: data_input[i]['CustId'].toString(),
       field02: data_input[i]['CustFull'].toString(),
       field03: data_input[i]['CustShort'].toString(),
-      field04: data_input[i]['Branch'].toString(),
-      field05: data_input[i]['CODE'].toString(),
-      field06: "",
-      field07: "",
-      field08: "",
-      field09: "",
-      field10: "",
+      field04: data_input[i]['FrequencyRequest'].toString(),
+      field05: data_input[i]['SampleGroup'].toString(),
+      field06: data_input[i]['SampleType'].toString(),
+      field07: data_input[i]['SampleTank'].toString(),
+      field08: data_input[i]['SampleName'].toString(),
+      field09: data_input[i]['Frequency'].toString(),
+      field10: data_input[i]['ItemNo'].toString(),
+      field11: data_input[i]['Instrument'].toString(),
+      field12: data_input[i]['ItemName'].toString(),
+      field13: data_input[i]['Position'].toString(),
+      field14: data_input[i]['Mag'].toString(),
+      field15: data_input[i]['Temp'].toString(),
+      field16: data_input[i]['StdFactor'].toString(),
+      field17: data_input[i]['StdMax'].toString(),
+      field18: data_input[i]['StdMin'].toString(),
+      field19: "",
+      field20: "",
     ));
   }
 
@@ -396,22 +510,35 @@ Stream<List<MainStrucTableTap2_MR>> InsertData2_fn_MR(
     List<MainStrucTableTap2_MR> state) async* {
   print("INSERT FUNCTION BLOC 2");
   var input_init = {
-    "Id": "insert",
+    "Id": EditDataTable2buffer_MR.number,
     "CustId": EditDataTable2buffer_MR.field01,
     "CustFull": EditDataTable2buffer_MR.field02,
     "CustShort": EditDataTable2buffer_MR.field03,
-    "Branch": EditDataTable2buffer_MR.field04,
-    "CODE": EditDataTable2buffer_MR.field05
+    "FrequencyRequest": EditDataTable2buffer_MR.field04,
+    "SampleGroup": EditDataTable2buffer_MR.field05,
+    "SampleType": EditDataTable2buffer_MR.field06,
+    "SampleTank": EditDataTable2buffer_MR.field07,
+    "SampleName": EditDataTable2buffer_MR.field08,
+    "Frequency": EditDataTable2buffer_MR.field09,
+    "ItemNo": EditDataTable2buffer_MR.field10,
+    "Instrument": EditDataTable2buffer_MR.field11,
+    "ItemName": EditDataTable2buffer_MR.field12,
+    "Position": EditDataTable2buffer_MR.field13,
+    "Mag": EditDataTable2buffer_MR.field14,
+    "Temp": EditDataTable2buffer_MR.field15,
+    "StdFactor": EditDataTable2buffer_MR.field16,
+    "StdMax": EditDataTable2buffer_MR.field17,
+    "StdMin": EditDataTable2buffer_MR.field18,
   };
 
   final response_init = await http
-      .post(Uri.parse(server + "Customer_Data_insert"), body: input_init);
+      .post(Uri.parse(server + "Routine_MasterLab_insert"), body: input_init);
 
   //------------------------------------------------------------------------------
 
   String input = "hi data";
-  final response =
-      await http.post(Uri.parse(server + "Customer_Data_query"), body: input);
+  final response = await http
+      .post(Uri.parse(server + "Routine_MasterLab_query"), body: input);
 
   var data_input = [];
   if (response.statusCode == 200) {
@@ -429,13 +556,23 @@ Stream<List<MainStrucTableTap2_MR>> InsertData2_fn_MR(
       field01: data_input[i]['CustId'].toString(),
       field02: data_input[i]['CustFull'].toString(),
       field03: data_input[i]['CustShort'].toString(),
-      field04: data_input[i]['Branch'].toString(),
-      field05: data_input[i]['CODE'].toString(),
-      field06: "",
-      field07: "",
-      field08: "",
-      field09: "",
-      field10: "",
+      field04: data_input[i]['FrequencyRequest'].toString(),
+      field05: data_input[i]['SampleGroup'].toString(),
+      field06: data_input[i]['SampleType'].toString(),
+      field07: data_input[i]['SampleTank'].toString(),
+      field08: data_input[i]['SampleName'].toString(),
+      field09: data_input[i]['Frequency'].toString(),
+      field10: data_input[i]['ItemNo'].toString(),
+      field11: data_input[i]['Instrument'].toString(),
+      field12: data_input[i]['ItemName'].toString(),
+      field13: data_input[i]['Position'].toString(),
+      field14: data_input[i]['Mag'].toString(),
+      field15: data_input[i]['Temp'].toString(),
+      field16: data_input[i]['StdFactor'].toString(),
+      field17: data_input[i]['StdMax'].toString(),
+      field18: data_input[i]['StdMin'].toString(),
+      field19: "",
+      field20: "",
     ));
   }
 
@@ -468,8 +605,8 @@ Stream<List<MainStrucTableTap3_MR>> selectData3_fn_MR(
     List<MainStrucTableTap3_MR> state) async* {
   print("SELECT FUNCTION BLOC 3");
   String input = "hi data";
-  final response =
-      await http.post(Uri.parse(server + "Frequency_query"), body: input);
+  final response = await http.post(Uri.parse(server + "Routine_MasterTS_query"),
+      body: input);
 
   var data_input = [];
   if (response.statusCode == 200) {
@@ -484,16 +621,26 @@ Stream<List<MainStrucTableTap3_MR>> selectData3_fn_MR(
   for (var i = 0; i < data_input.length; i++) {
     stateoutput.add(MainStrucTableTap3_MR(
       number: data_input[i]['Id'].toString(),
-      field01: data_input[i]['FrequencyId'].toString(),
-      field02: data_input[i]['Frequency'].toString(),
-      field03: "",
-      field04: "",
-      field05: "",
-      field06: "",
-      field07: "",
-      field08: "",
-      field09: "",
-      field10: "",
+      field01: data_input[i]['CustId'].toString(),
+      field02: data_input[i]['CustFull'].toString(),
+      field03: data_input[i]['CustShort'].toString(),
+      field04: data_input[i]['FrequencyRequest'].toString(),
+      field05: data_input[i]['SampleGroup'].toString(),
+      field06: data_input[i]['SampleType'].toString(),
+      field07: data_input[i]['SampleTank'].toString(),
+      field08: data_input[i]['SampleName'].toString(),
+      field09: data_input[i]['Frequency'].toString(),
+      field10: data_input[i]['ItemNo'].toString(),
+      field11: data_input[i]['Instrument'].toString(),
+      field12: data_input[i]['ItemName'].toString(),
+      field13: data_input[i]['Position'].toString(),
+      field14: data_input[i]['Mag'].toString(),
+      field15: data_input[i]['Temp'].toString(),
+      field16: data_input[i]['StdFactor'].toString(),
+      field17: data_input[i]['StdMax'].toString(),
+      field18: data_input[i]['StdMin'].toString(),
+      field19: "",
+      field20: "",
     ));
   }
   state = stateoutput;
@@ -505,17 +652,33 @@ Stream<List<MainStrucTableTap3_MR>> updateData3_fn_MR(
   print("UPDATE FUNCTION BLOC 3");
   var input_init = {
     "Id": EditDataTable3buffer_MR.number,
-    "FrequencyId": EditDataTable3buffer_MR.field01,
-    "Frequency": EditDataTable3buffer_MR.field02,
+    "CustId": EditDataTable3buffer_MR.field01,
+    "CustFull": EditDataTable3buffer_MR.field02,
+    "CustShort": EditDataTable3buffer_MR.field03,
+    "FrequencyRequest": EditDataTable3buffer_MR.field04,
+    "SampleGroup": EditDataTable3buffer_MR.field05,
+    "SampleType": EditDataTable3buffer_MR.field06,
+    "SampleTank": EditDataTable3buffer_MR.field07,
+    "SampleName": EditDataTable3buffer_MR.field08,
+    "Frequency": EditDataTable3buffer_MR.field09,
+    "ItemNo": EditDataTable3buffer_MR.field10,
+    "Instrument": EditDataTable3buffer_MR.field11,
+    "ItemName": EditDataTable3buffer_MR.field12,
+    "Position": EditDataTable3buffer_MR.field13,
+    "Mag": EditDataTable3buffer_MR.field14,
+    "Temp": EditDataTable3buffer_MR.field15,
+    "StdFactor": EditDataTable3buffer_MR.field16,
+    "StdMax": EditDataTable3buffer_MR.field17,
+    "StdMin": EditDataTable3buffer_MR.field18,
   };
 
-  final response_init =
-      await http.post(Uri.parse(server + "Frequency_update"), body: input_init);
+  final response_init = await http
+      .post(Uri.parse(server + "Routine_MasterTS_update"), body: input_init);
 
   //------------------------------------------------------------------------------
   String input = "hi data";
-  final response =
-      await http.post(Uri.parse(server + "Frequency_query"), body: input);
+  final response = await http.post(Uri.parse(server + "Routine_MasterTS_query"),
+      body: input);
 
   var data_input = [];
   if (response.statusCode == 200) {
@@ -530,16 +693,26 @@ Stream<List<MainStrucTableTap3_MR>> updateData3_fn_MR(
   for (var i = 0; i < data_input.length; i++) {
     stateoutput.add(MainStrucTableTap3_MR(
       number: data_input[i]['Id'].toString(),
-      field01: data_input[i]['FrequencyId'].toString(),
-      field02: data_input[i]['Frequency'].toString(),
-      field03: "",
-      field04: "",
-      field05: "",
-      field06: "",
-      field07: "",
-      field08: "",
-      field09: "",
-      field10: "",
+      field01: data_input[i]['CustId'].toString(),
+      field02: data_input[i]['CustFull'].toString(),
+      field03: data_input[i]['CustShort'].toString(),
+      field04: data_input[i]['FrequencyRequest'].toString(),
+      field05: data_input[i]['SampleGroup'].toString(),
+      field06: data_input[i]['SampleType'].toString(),
+      field07: data_input[i]['SampleTank'].toString(),
+      field08: data_input[i]['SampleName'].toString(),
+      field09: data_input[i]['Frequency'].toString(),
+      field10: data_input[i]['ItemNo'].toString(),
+      field11: data_input[i]['Instrument'].toString(),
+      field12: data_input[i]['ItemName'].toString(),
+      field13: data_input[i]['Position'].toString(),
+      field14: data_input[i]['Mag'].toString(),
+      field15: data_input[i]['Temp'].toString(),
+      field16: data_input[i]['StdFactor'].toString(),
+      field17: data_input[i]['StdMax'].toString(),
+      field18: data_input[i]['StdMin'].toString(),
+      field19: "",
+      field20: "",
     ));
   }
   state = stateoutput;
@@ -550,18 +723,34 @@ Stream<List<MainStrucTableTap3_MR>> deleteData3_fn_MR(
     List<MainStrucTableTap3_MR> state) async* {
   print("DELETE FUNCTION BLOC 3");
   var input_init = {
-    "Id": DeleteDataTable3buffer_MR.number,
-    "FrequencyId": DeleteDataTable3buffer_MR.field01,
-    "Frequency": DeleteDataTable3buffer_MR.field02,
+    "Id": EditDataTable3buffer_MR.number,
+    "CustId": EditDataTable3buffer_MR.field01,
+    "CustFull": EditDataTable3buffer_MR.field02,
+    "CustShort": EditDataTable3buffer_MR.field03,
+    "FrequencyRequest": EditDataTable3buffer_MR.field04,
+    "SampleGroup": EditDataTable3buffer_MR.field05,
+    "SampleType": EditDataTable3buffer_MR.field06,
+    "SampleTank": EditDataTable3buffer_MR.field07,
+    "SampleName": EditDataTable3buffer_MR.field08,
+    "Frequency": EditDataTable3buffer_MR.field09,
+    "ItemNo": EditDataTable3buffer_MR.field10,
+    "Instrument": EditDataTable3buffer_MR.field11,
+    "ItemName": EditDataTable3buffer_MR.field12,
+    "Position": EditDataTable3buffer_MR.field13,
+    "Mag": EditDataTable3buffer_MR.field14,
+    "Temp": EditDataTable3buffer_MR.field15,
+    "StdFactor": EditDataTable3buffer_MR.field16,
+    "StdMax": EditDataTable3buffer_MR.field17,
+    "StdMin": EditDataTable3buffer_MR.field18,
   };
 
-  final response_init =
-      await http.post(Uri.parse(server + "Frequency_delete"), body: input_init);
+  final response_init = await http
+      .post(Uri.parse(server + "Routine_MasterTS_delete"), body: input_init);
 
   //------------------------------------------------------------------------------
   String input = "hi data";
-  final response =
-      await http.post(Uri.parse(server + "Frequency_query"), body: input);
+  final response = await http.post(Uri.parse(server + "Routine_MasterTS_query"),
+      body: input);
 
   var data_input = [];
   if (response.statusCode == 200) {
@@ -576,16 +765,26 @@ Stream<List<MainStrucTableTap3_MR>> deleteData3_fn_MR(
   for (var i = 0; i < data_input.length; i++) {
     stateoutput.add(MainStrucTableTap3_MR(
       number: data_input[i]['Id'].toString(),
-      field01: data_input[i]['FrequencyId'].toString(),
-      field02: data_input[i]['Frequency'].toString(),
-      field03: "",
-      field04: "",
-      field05: "",
-      field06: "",
-      field07: "",
-      field08: "",
-      field09: "",
-      field10: "",
+      field01: data_input[i]['CustId'].toString(),
+      field02: data_input[i]['CustFull'].toString(),
+      field03: data_input[i]['CustShort'].toString(),
+      field04: data_input[i]['FrequencyRequest'].toString(),
+      field05: data_input[i]['SampleGroup'].toString(),
+      field06: data_input[i]['SampleType'].toString(),
+      field07: data_input[i]['SampleTank'].toString(),
+      field08: data_input[i]['SampleName'].toString(),
+      field09: data_input[i]['Frequency'].toString(),
+      field10: data_input[i]['ItemNo'].toString(),
+      field11: data_input[i]['Instrument'].toString(),
+      field12: data_input[i]['ItemName'].toString(),
+      field13: data_input[i]['Position'].toString(),
+      field14: data_input[i]['Mag'].toString(),
+      field15: data_input[i]['Temp'].toString(),
+      field16: data_input[i]['StdFactor'].toString(),
+      field17: data_input[i]['StdMax'].toString(),
+      field18: data_input[i]['StdMin'].toString(),
+      field19: "",
+      field20: "",
     ));
   }
   state = stateoutput;
@@ -596,18 +795,34 @@ Stream<List<MainStrucTableTap3_MR>> InsertData3_fn_MR(
     List<MainStrucTableTap3_MR> state) async* {
   print("INSERT FUNCTION BLOC 3");
   var input_init = {
-    "Id": "insert",
-    "FrequencyId": EditDataTable3buffer_MR.field01,
-    "Frequency": EditDataTable3buffer_MR.field02,
+    "Id": EditDataTable3buffer_MR.number,
+    "CustId": EditDataTable3buffer_MR.field01,
+    "CustFull": EditDataTable3buffer_MR.field02,
+    "CustShort": EditDataTable3buffer_MR.field03,
+    "FrequencyRequest": EditDataTable3buffer_MR.field04,
+    "SampleGroup": EditDataTable3buffer_MR.field05,
+    "SampleType": EditDataTable3buffer_MR.field06,
+    "SampleTank": EditDataTable3buffer_MR.field07,
+    "SampleName": EditDataTable3buffer_MR.field08,
+    "Frequency": EditDataTable3buffer_MR.field09,
+    "ItemNo": EditDataTable3buffer_MR.field10,
+    "Instrument": EditDataTable3buffer_MR.field11,
+    "ItemName": EditDataTable3buffer_MR.field12,
+    "Position": EditDataTable3buffer_MR.field13,
+    "Mag": EditDataTable3buffer_MR.field14,
+    "Temp": EditDataTable3buffer_MR.field15,
+    "StdFactor": EditDataTable3buffer_MR.field16,
+    "StdMax": EditDataTable3buffer_MR.field17,
+    "StdMin": EditDataTable3buffer_MR.field18,
   };
 
-  final response_init =
-      await http.post(Uri.parse(server + "Frequency_insert"), body: input_init);
+  final response_init = await http
+      .post(Uri.parse(server + "Routine_MasterTS_insert"), body: input_init);
 
   //------------------------------------------------------------------------------
   String input = "hi data";
-  final response =
-      await http.post(Uri.parse(server + "Frequency_query"), body: input);
+  final response = await http.post(Uri.parse(server + "Routine_MasterTS_query"),
+      body: input);
 
   var data_input = [];
   if (response.statusCode == 200) {
@@ -622,16 +837,26 @@ Stream<List<MainStrucTableTap3_MR>> InsertData3_fn_MR(
   for (var i = 0; i < data_input.length; i++) {
     stateoutput.add(MainStrucTableTap3_MR(
       number: data_input[i]['Id'].toString(),
-      field01: data_input[i]['FrequencyId'].toString(),
-      field02: data_input[i]['Frequency'].toString(),
-      field03: "",
-      field04: "",
-      field05: "",
-      field06: "",
-      field07: "",
-      field08: "",
-      field09: "",
-      field10: "",
+      field01: data_input[i]['CustId'].toString(),
+      field02: data_input[i]['CustFull'].toString(),
+      field03: data_input[i]['CustShort'].toString(),
+      field04: data_input[i]['FrequencyRequest'].toString(),
+      field05: data_input[i]['SampleGroup'].toString(),
+      field06: data_input[i]['SampleType'].toString(),
+      field07: data_input[i]['SampleTank'].toString(),
+      field08: data_input[i]['SampleName'].toString(),
+      field09: data_input[i]['Frequency'].toString(),
+      field10: data_input[i]['ItemNo'].toString(),
+      field11: data_input[i]['Instrument'].toString(),
+      field12: data_input[i]['ItemName'].toString(),
+      field13: data_input[i]['Position'].toString(),
+      field14: data_input[i]['Mag'].toString(),
+      field15: data_input[i]['Temp'].toString(),
+      field16: data_input[i]['StdFactor'].toString(),
+      field17: data_input[i]['StdMax'].toString(),
+      field18: data_input[i]['StdMin'].toString(),
+      field19: "",
+      field20: "",
     ));
   }
   state = stateoutput;

@@ -29,8 +29,8 @@ class DataListTable2 extends StatefulWidget {
 }
 
 class _DataListTable2State extends State<DataListTable2> {
-  int nCurrentSortIndex = 0; //index from Header DataColumn
-  bool isSortAscending = true;
+  int nCurrentSortIndex_MR = 0; //index from Header DataColumn
+  bool isSortAscending_MR = true;
 
   @override
   Widget build(BuildContext context) {
@@ -69,6 +69,58 @@ class _DataListTable2State extends State<DataListTable2> {
             Listdata_Clone.sort(
                 (item1, item2) => item1.field06.compareTo(item2.field06));
             break;
+          case 7:
+            Listdata_Clone.sort(
+                (item1, item2) => item1.field07.compareTo(item2.field07));
+            break;
+          case 8:
+            Listdata_Clone.sort(
+                (item1, item2) => item1.field08.compareTo(item2.field08));
+            break;
+          case 9:
+            Listdata_Clone.sort(
+                (item1, item2) => item1.field09.compareTo(item2.field09));
+            break;
+          case 10:
+            Listdata_Clone.sort(
+                (item1, item2) => item1.field10.compareTo(item2.field10));
+            break;
+          case 11:
+            Listdata_Clone.sort(
+                (item1, item2) => item1.field11.compareTo(item2.field11));
+            break;
+          case 12:
+            Listdata_Clone.sort(
+                (item1, item2) => item1.field12.compareTo(item2.field12));
+            break;
+          case 13:
+            Listdata_Clone.sort(
+                (item1, item2) => item1.field13.compareTo(item2.field13));
+            break;
+          case 14:
+            Listdata_Clone.sort(
+                (item1, item2) => item1.field14.compareTo(item2.field14));
+            break;
+          case 15:
+            Listdata_Clone.sort(
+                (item1, item2) => item1.field15.compareTo(item2.field15));
+            break;
+          case 16:
+            Listdata_Clone.sort(
+                (item1, item2) => item1.field16.compareTo(item2.field16));
+            break;
+          case 17:
+            Listdata_Clone.sort(
+                (item1, item2) => item1.field17.compareTo(item2.field17));
+            break;
+          case 18:
+            Listdata_Clone.sort(
+                (item1, item2) => item1.field18.compareTo(item2.field18));
+            break;
+          case 19:
+            Listdata_Clone.sort(
+                (item1, item2) => item1.field19.compareTo(item2.field19));
+            break;
         }
       } else {
         switch (nIndex) {
@@ -96,12 +148,64 @@ class _DataListTable2State extends State<DataListTable2> {
             Listdata_Clone.sort(
                 (item1, item2) => item2.field06.compareTo(item1.field06));
             break;
+          case 7:
+            Listdata_Clone.sort(
+                (item1, item2) => item2.field07.compareTo(item1.field07));
+            break;
+          case 8:
+            Listdata_Clone.sort(
+                (item1, item2) => item2.field08.compareTo(item1.field08));
+            break;
+          case 9:
+            Listdata_Clone.sort(
+                (item1, item2) => item2.field09.compareTo(item1.field09));
+            break;
+          case 10:
+            Listdata_Clone.sort(
+                (item1, item2) => item2.field10.compareTo(item1.field10));
+            break;
+          case 11:
+            Listdata_Clone.sort(
+                (item1, item2) => item2.field11.compareTo(item1.field11));
+            break;
+          case 12:
+            Listdata_Clone.sort(
+                (item1, item2) => item2.field12.compareTo(item1.field12));
+            break;
+          case 13:
+            Listdata_Clone.sort(
+                (item1, item2) => item2.field13.compareTo(item1.field13));
+            break;
+          case 14:
+            Listdata_Clone.sort(
+                (item1, item2) => item2.field14.compareTo(item1.field14));
+            break;
+          case 15:
+            Listdata_Clone.sort(
+                (item1, item2) => item2.field15.compareTo(item1.field15));
+            break;
+          case 16:
+            Listdata_Clone.sort(
+                (item1, item2) => item2.field16.compareTo(item1.field16));
+            break;
+          case 17:
+            Listdata_Clone.sort(
+                (item1, item2) => item2.field17.compareTo(item1.field17));
+            break;
+          case 18:
+            Listdata_Clone.sort(
+                (item1, item2) => item2.field18.compareTo(item1.field18));
+            break;
+          case 19:
+            Listdata_Clone.sort(
+                (item1, item2) => item2.field19.compareTo(item1.field19));
+            break;
         }
       }
       //BlocPatientList.sort();
       setState(() {
-        nCurrentSortIndex = columnIndex;
-        isSortAscending = ascending;
+        nCurrentSortIndex_MR = columnIndex;
+        isSortAscending_MR = ascending;
       });
     }
 
@@ -114,8 +218,8 @@ class _DataListTable2State extends State<DataListTable2> {
       EditDataTable2_MR = s;
       EditDataTable2buffer_MR = s;
       undercontroltap2_MR = true;
-      Branch_MR = s.field04;
-      Code_MR = s.field05;
+      // Branch_MR = s.field04;
+      // Code_MR = s.field05;
 
       context.read<FetchDataTable2Bloc_MR>().add(DataSequncePage2_MR.select);
       _ConsoleBox(s, context, zeroDropDownData);
@@ -240,6 +344,16 @@ class _DataListTable2State extends State<DataListTable2> {
                         field08: "",
                         field09: "",
                         field10: "",
+                        field11: "",
+                        field12: "",
+                        field13: "",
+                        field14: "",
+                        field15: "",
+                        field16: "",
+                        field17: "",
+                        field18: "",
+                        field19: "",
+                        field20: "",
                       );
                       // CustFull = '';
                       // FrequencyRequest = '';
@@ -261,8 +375,8 @@ class _DataListTable2State extends State<DataListTable2> {
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child: DataTable(
-              sortColumnIndex: nCurrentSortIndex,
-              sortAscending: isSortAscending,
+              sortColumnIndex: nCurrentSortIndex_MR,
+              sortAscending: isSortAscending_MR,
               showCheckboxColumn:
                   false, //Hide checkbox that come from tap row 'onselectchanged'
               columnSpacing: 10,
@@ -272,15 +386,41 @@ class _DataListTable2State extends State<DataListTable2> {
                 _getDataColumn(
                     1, "No", 'Sort Field 1', nDataColumnWidth, tapSort),
                 _getDataColumn(
-                    2, "CustID", 'Sort Field 2', nDataColumnWidth, tapSort),
+                    2, "CustId", 'Sort Field 2', nDataColumnWidth, tapSort),
                 _getDataColumn(
                     3, "CustFull", 'Sort Field 3', nDataColumnWidth, tapSort),
                 _getDataColumn(
                     4, "CustShort", 'Sort Field 4', nDataColumnWidth, tapSort),
+                _getDataColumn(5, "FrequencyRequest", 'Sort Field 5',
+                    nDataColumnWidth, tapSort),
+                _getDataColumn(6, "SampleGroup", 'Sort Field 6',
+                    nDataColumnWidth, tapSort),
                 _getDataColumn(
-                    5, "Branch", 'Sort Field 5', nDataColumnWidth, tapSort),
+                    7, "SampleType", 'Sort Field 7', nDataColumnWidth, tapSort),
                 _getDataColumn(
-                    6, "Code", 'Sort Field 6', nDataColumnWidth, tapSort),
+                    8, "SampleTank", 'Sort Field 8', nDataColumnWidth, tapSort),
+                _getDataColumn(
+                    9, "SampleName", 'Sort Field 9', nDataColumnWidth, tapSort),
+                _getDataColumn(10, "Frequency", 'Sort Field 10',
+                    nDataColumnWidth, tapSort),
+                _getDataColumn(
+                    11, "ItemNo", 'Sort Field 11', nDataColumnWidth, tapSort),
+                _getDataColumn(12, "Instrument", 'Sort Field 12',
+                    nDataColumnWidth, tapSort),
+                _getDataColumn(
+                    13, "ItemName", 'Sort Field 13', nDataColumnWidth, tapSort),
+                _getDataColumn(
+                    14, "Position", 'Sort Field 14', nDataColumnWidth, tapSort),
+                _getDataColumn(
+                    15, "Mag", 'Sort Field 15', nDataColumnWidth, tapSort),
+                _getDataColumn(
+                    16, "Temp", 'Sort Field 16', nDataColumnWidth, tapSort),
+                _getDataColumn(17, "StdFactor", 'Sort Field 17',
+                    nDataColumnWidth, tapSort),
+                _getDataColumn(
+                    18, "StdMax", 'Sort Field 18', nDataColumnWidth, tapSort),
+                _getDataColumn(
+                    19, "StdMin", 'Sort Field 19', nDataColumnWidth, tapSort),
                 _getBlankDataColumn(nDataColumnWidthIcon),
               ],
               // Cell Row  -----------------------------------------------------------
@@ -351,6 +491,19 @@ List<DataRow> _getDataRowList(
         Listdata_Clone[n].field04,
         Listdata_Clone[n].field05,
         Listdata_Clone[n].field06,
+        Listdata_Clone[n].field07,
+        Listdata_Clone[n].field08,
+        Listdata_Clone[n].field09,
+        Listdata_Clone[n].field10,
+        Listdata_Clone[n].field11,
+        Listdata_Clone[n].field12,
+        Listdata_Clone[n].field13,
+        Listdata_Clone[n].field14,
+        Listdata_Clone[n].field15,
+        Listdata_Clone[n].field16,
+        Listdata_Clone[n].field17,
+        Listdata_Clone[n].field18,
+        Listdata_Clone[n].field19,
         nDataColumnWidth,
         nDataColumnWidthIcon,
         nDataWidthIcon,
@@ -374,6 +527,19 @@ DataRow _getDataRow(
     String field04,
     String field05,
     String field06,
+    String field07,
+    String field08,
+    String field09,
+    String field10,
+    String field11,
+    String field12,
+    String field13,
+    String field14,
+    String field15,
+    String field16,
+    String field17,
+    String field18,
+    String field19,
     double nDataColumnWidth,
     double nDataColumnWidthIcon,
     double nDataWidthIcon,
@@ -393,6 +559,20 @@ DataRow _getDataRow(
         _getDataCell_Label(field03, nDataColumnWidth),
         _getDataCell_Label(field04, nDataColumnWidth),
         _getDataCell_Label(field05, nDataColumnWidth),
+        _getDataCell_Label(field06, nDataColumnWidth),
+        _getDataCell_Label(field07, nDataColumnWidth),
+        _getDataCell_Label(field08, nDataColumnWidth),
+        _getDataCell_Label(field09, nDataColumnWidth),
+        _getDataCell_Label(field10, nDataColumnWidth),
+        _getDataCell_Label(field11, nDataColumnWidth),
+        _getDataCell_Label(field12, nDataColumnWidth),
+        _getDataCell_Label(field13, nDataColumnWidth),
+        _getDataCell_Label(field14, nDataColumnWidth),
+        _getDataCell_Label(field15, nDataColumnWidth),
+        _getDataCell_Label(field16, nDataColumnWidth),
+        _getDataCell_Label(field17, nDataColumnWidth),
+        _getDataCell_Label(field18, nDataColumnWidth),
+        // _getDataCell_Label(field19, nDataColumnWidth),
         _getDataCell_Icon(number, funcEdit, funcDelete, nDataColumnWidthIcon,
             nDataWidthIcon, nMarginToMakeIconSmaller, getData),
       ],
@@ -491,237 +671,605 @@ void _ConsoleBox(MainStrucTableTap2_MR input, BuildContext contextinput,
     barrierDismissible: true,
     builder: (BuildContext context) {
       // DropDownData _datadropdown = dropdowndata;
-      EditDataTable2_MR.field04 = Branch_MR;
-      EditDataTable2_MR.field05 = Code_MR;
+      // EditDataTable2_MR.field04 = Branch_MR;
+      // EditDataTable2_MR.field05 = Code_MR;
       return Dialog(
-        child: Container(
-          decoration: BoxDecoration(
-            color: CustomTheme.colorGreyBg,
-            borderRadius: BorderRadius.all(Radius.circular(24)),
-            boxShadow: [
-              BoxShadow(
-                  color: CustomTheme.colorShadowBgStrong,
-                  offset: Offset(0, 0),
-                  blurRadius: 10,
-                  spreadRadius: 0)
-            ],
-          ),
-          width: 450,
-          height: 420,
-          child: Column(
-            // mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Align(
-                alignment: Alignment.topCenter,
-                child: Container(
-                  width: 400,
-                  height: 20,
-                  // color: Colors.blue,
-                ),
-              ),
-              SizedBox(
-                width: 400,
-                height: 15,
-                child:
-                    Align(alignment: Alignment.centerLeft, child: Text("NO")),
-              ),
-              Container(
-                width: 400,
-                height: 40,
-                // color: Colors.red,
-                child: ComInputText(
-                  isContr: undercontroltap2_MR,
-                  fnContr: (input) {
-                    undercontroltap2_MR = input;
-                  },
-                  sValue: EditDataTable2_MR.number,
-                  returnfunc: () {},
-                  isEnabled: false,
-                ),
-              ),
-              SizedBox(
-                width: 400,
-                height: 15,
-                child: Align(
-                    alignment: Alignment.centerLeft, child: Text("Custid")),
-              ),
-              Container(
-                width: 400,
-                height: 40,
-                // color: Colors.red,
-                child: ComInputText(
-                    isContr: undercontroltap2_MR,
-                    fnContr: (input) {
-                      undercontroltap2_MR = input;
-                    },
-                    sValue: EditDataTable2_MR.field01,
-                    returnfunc: (String s) {
-                      EditDataTable2buffer_MR.field01 = s;
-                    }),
-              ),
-              SizedBox(
-                width: 400,
-                height: 15,
-                child: Align(
-                    alignment: Alignment.centerLeft, child: Text("CustFull")),
-              ),
-              Container(
-                width: 400,
-                height: 40,
-                // color: Colors.red,
-                child: ComInputText(
-                  isContr: undercontroltap2_MR,
-                  fnContr: (input) {
-                    undercontroltap2_MR = input;
-                  },
-                  sValue: EditDataTable2_MR.field02,
-                  returnfunc: (String s) {
-                    EditDataTable2buffer_MR.field02 = s;
-                  },
-                ),
-              ),
-              SizedBox(
-                width: 400,
-                height: 15,
-                child: Align(
-                    alignment: Alignment.centerLeft, child: Text("CustShort")),
-              ),
-              Container(
-                width: 400,
-                height: 40,
-                // color: Colors.red,
-                child: ComInputText(
-                  isContr: undercontroltap2_MR,
-                  fnContr: (input) {
-                    undercontroltap2_MR = input;
-                  },
-                  sValue: EditDataTable2_MR.field03,
-                  returnfunc: (String s) {
-                    EditDataTable2buffer_MR.field03 = s;
-                  },
-                ),
-              ),
-              SizedBox(
-                width: 400,
-                height: 15,
-                child: Align(
-                    alignment: Alignment.centerLeft, child: Text("Branch")),
-              ),
-              EasyDropDown(
-                width: 400,
-                height: 40,
-                value: Branch_MR,
-                onChangeinside: (newValue) {
-                  Branch_MR = newValue!;
-                  EditDataTable2buffer_MR.field04 = newValue;
-                  BlocProvider.of<BlocPageRebuild>(contextinput).rebuildPage();
-                },
-                listdropdown: ['', 'RAYONG', 'BANGPOO', 'GATEWAY'],
-              ),
-              SizedBox(
-                width: 400,
-                height: 15,
-                child:
-                    Align(alignment: Alignment.centerLeft, child: Text("CODE")),
-              ),
-              EasyDropDown(
-                width: 400,
-                height: 40,
-                value: Code_MR,
-                onChangeinside: (newValue) {
-                  Code_MR = newValue!;
-                  EditDataTable2buffer_MR.field05 = newValue;
-                  BlocProvider.of<BlocPageRebuild>(contextinput).rebuildPage();
-                },
-                listdropdown: ['', 'CTS', 'MKT', 'PHO'],
-              ),
-              // SizedBox(
-              //   width: 400,
-              //   height: 15,
-              //   // child:
-              //   //     Align(alignment: Alignment.centerLeft, child: Text("test")),
-              // ),
-              // Container(
-              //   width: 400,
-              //   height: 40,
-              //   // color: Colors.red,
-              //   child: ComInputText(
-              //     isContr: undercontroltap2,
-              //     fnContr: (input) {
-              //       undercontroltap2 = input;
-              //     },
-              //     sValue: EditDataTable2.field06,
-              //     returnfunc: (String s) {
-              //       EditDataTable2buffer.field06 = s;
-              //     },
-              //   ),
-              // ),
-              SizedBox(
-                height: 10,
-              ),
-              Align(
-                alignment: Alignment.bottomCenter,
-                child: Container(
-                  width: 460,
-                  height: 40,
-                  // color: Colors.blue,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
+        child: SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Container(
+            decoration: BoxDecoration(
+              color: CustomTheme.colorGreyBg,
+              borderRadius: BorderRadius.all(Radius.circular(24)),
+              boxShadow: [
+                BoxShadow(
+                    color: CustomTheme.colorShadowBgStrong,
+                    offset: Offset(0, 0),
+                    blurRadius: 10,
+                    spreadRadius: 0)
+              ],
+            ),
+            width: 1350,
+            height: 500,
+            child: SingleChildScrollView(
+              child: Column(
+                // mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      ComBtnBlack(
-                          sLabel: "Update",
-                          func: () {
-                            // print(EditDataTable2buffer.field04);
-                            // EditDataTable2buffer = EditDataTable2;
-                            contextinput.read<FetchDataTable2Bloc_MR>().add(
-                                DataSequncePage2_MR
-                                    .update); //<------------------
-                            Navigator.pop(contextinput);
-                          },
-                          nWidth: 80),
-                      SizedBox(
-                        width: 10,
+                      Column(
+                        children: [
+                          Align(
+                            alignment: Alignment.topCenter,
+                            child: Container(
+                              width: 400,
+                              height: 20,
+                              // color: Colors.blue,
+                            ),
+                          ),
+                          SizedBox(
+                            width: 400,
+                            height: 15,
+                            child: Align(
+                                alignment: Alignment.centerLeft,
+                                child: Text("Id")),
+                          ),
+                          Container(
+                            width: 400,
+                            height: 40,
+                            // color: Colors.red,
+                            child: ComInputText(
+                              isContr: undercontroltap2_MR,
+                              fnContr: (input) {
+                                undercontroltap2_MR = input;
+                              },
+                              sValue: EditDataTable2_MR.number,
+                              returnfunc: () {},
+                              isEnabled: false,
+                            ),
+                          ),
+                          SizedBox(
+                            width: 400,
+                            height: 15,
+                            child: Align(
+                                alignment: Alignment.centerLeft,
+                                child: Text("CustId")),
+                          ),
+                          Container(
+                            width: 400,
+                            height: 40,
+                            // color: Colors.red,
+                            child: ComInputText(
+                                isContr: undercontroltap2_MR,
+                                fnContr: (input) {
+                                  undercontroltap2_MR = input;
+                                },
+                                sValue: EditDataTable2_MR.field01,
+                                returnfunc: (String s) {
+                                  EditDataTable2buffer_MR.field01 = s;
+                                }),
+                          ),
+                          SizedBox(
+                            width: 400,
+                            height: 15,
+                            child: Align(
+                                alignment: Alignment.centerLeft,
+                                child: Text("CustFull")),
+                          ),
+                          Container(
+                            width: 400,
+                            height: 40,
+                            // color: Colors.red,
+                            child: ComInputText(
+                              isContr: undercontroltap2_MR,
+                              fnContr: (input) {
+                                undercontroltap2_MR = input;
+                              },
+                              sValue: EditDataTable2_MR.field02,
+                              returnfunc: (String s) {
+                                EditDataTable2buffer_MR.field02 = s;
+                              },
+                            ),
+                          ),
+                          SizedBox(
+                            width: 400,
+                            height: 15,
+                            child: Align(
+                                alignment: Alignment.centerLeft,
+                                child: Text("CustShort")),
+                          ),
+                          Container(
+                            width: 400,
+                            height: 40,
+                            // color: Colors.red,
+                            child: ComInputText(
+                              isContr: undercontroltap2_MR,
+                              fnContr: (input) {
+                                undercontroltap2_MR = input;
+                              },
+                              sValue: EditDataTable2_MR.field03,
+                              returnfunc: (String s) {
+                                EditDataTable2buffer_MR.field03 = s;
+                              },
+                            ),
+                          ),
+                          SizedBox(
+                            width: 400,
+                            height: 15,
+                            child: Align(
+                                alignment: Alignment.centerLeft,
+                                child: Text("FrequencyRequest")),
+                          ),
+                          Container(
+                            width: 400,
+                            height: 40,
+                            // color: Colors.red,
+                            child: ComInputText(
+                              isContr: undercontroltap2_MR,
+                              fnContr: (input) {
+                                undercontroltap2_MR = input;
+                              },
+                              sValue: EditDataTable2_MR.field04,
+                              returnfunc: (String s) {
+                                EditDataTable2buffer_MR.field04 = s;
+                              },
+                            ),
+                          ),
+                          SizedBox(
+                            width: 400,
+                            height: 15,
+                            child: Align(
+                                alignment: Alignment.centerLeft,
+                                child: Text("SampleGroup")),
+                          ),
+                          Container(
+                            width: 400,
+                            height: 40,
+                            // color: Colors.red,
+                            child: ComInputText(
+                              isContr: undercontroltap2_MR,
+                              fnContr: (input) {
+                                undercontroltap2_MR = input;
+                              },
+                              sValue: EditDataTable2_MR.field05,
+                              returnfunc: (String s) {
+                                EditDataTable2buffer_MR.field05 = s;
+                              },
+                            ),
+                          ),
+                          SizedBox(
+                            width: 400,
+                            height: 15,
+                            child: Align(
+                                alignment: Alignment.centerLeft,
+                                child: Text("SampleType")),
+                          ),
+                          Container(
+                            width: 400,
+                            height: 40,
+                            // color: Colors.red,
+                            child: ComInputText(
+                              isContr: undercontroltap2_MR,
+                              fnContr: (input) {
+                                undercontroltap2_MR = input;
+                              },
+                              sValue: EditDataTable2_MR.field06,
+                              returnfunc: (String s) {
+                                EditDataTable2buffer_MR.field06 = s;
+                              },
+                            ),
+                          ),
+                        ],
                       ),
-                      ComBtnBlackBorder(
-                          sLabel: "Clear",
-                          cBg: Colors.red,
-                          func: () {
-                            undercontroltap2_MR = true;
-                            EditDataTable2_MR = MainStrucTableTap2_MR(
-                              number: "",
-                              field01: "",
-                              field02: "",
-                              field03: "",
-                              field04: "",
-                              field05: "",
-                              field06: "",
-                              field07: "",
-                              field08: "",
-                              field09: "",
-                              field10: "",
-                            );
-
-                            BlocProvider.of<BlocPageRebuild>(contextinput)
-                                .rebuildPage();
-                          },
-                          nWidth: 80),
-                      SizedBox(
-                        width: 10,
+                      Column(
+                        children: [
+                          Align(
+                            alignment: Alignment.topCenter,
+                            child: Container(
+                              width: 400,
+                              height: 20,
+                              // color: Colors.blue,
+                            ),
+                          ),
+                          SizedBox(
+                            width: 400,
+                            height: 15,
+                            child: Align(
+                                alignment: Alignment.centerLeft,
+                                child: Text("SampleTank")),
+                          ),
+                          Container(
+                            width: 400,
+                            height: 40,
+                            // color: Colors.red,
+                            child: ComInputText(
+                              isContr: undercontroltap2_MR,
+                              fnContr: (input) {
+                                undercontroltap2_MR = input;
+                              },
+                              sValue: EditDataTable2_MR.field07,
+                              returnfunc: (String s) {
+                                EditDataTable2buffer_MR.field07 = s;
+                              },
+                            ),
+                          ),
+                          SizedBox(
+                            width: 400,
+                            height: 15,
+                            child: Align(
+                                alignment: Alignment.centerLeft,
+                                child: Text("SampleName")),
+                          ),
+                          Container(
+                            width: 400,
+                            height: 40,
+                            // color: Colors.red,
+                            child: ComInputText(
+                                isContr: undercontroltap2_MR,
+                                fnContr: (input) {
+                                  undercontroltap2_MR = input;
+                                },
+                                sValue: EditDataTable2_MR.field08,
+                                returnfunc: (String s) {
+                                  EditDataTable2buffer_MR.field08 = s;
+                                }),
+                          ),
+                          SizedBox(
+                            width: 400,
+                            height: 15,
+                            child: Align(
+                                alignment: Alignment.centerLeft,
+                                child: Text("Frequency")),
+                          ),
+                          Container(
+                            width: 400,
+                            height: 40,
+                            // color: Colors.red,
+                            child: ComInputText(
+                              isContr: undercontroltap2_MR,
+                              fnContr: (input) {
+                                undercontroltap2_MR = input;
+                              },
+                              sValue: EditDataTable2_MR.field09,
+                              returnfunc: (String s) {
+                                EditDataTable2buffer_MR.field09 = s;
+                              },
+                            ),
+                          ),
+                          SizedBox(
+                            width: 400,
+                            height: 15,
+                            child: Align(
+                                alignment: Alignment.centerLeft,
+                                child: Text("ItemNo")),
+                          ),
+                          Container(
+                            width: 400,
+                            height: 40,
+                            // color: Colors.red,
+                            child: ComInputText(
+                              isContr: undercontroltap2_MR,
+                              fnContr: (input) {
+                                undercontroltap2_MR = input;
+                              },
+                              sValue: EditDataTable2_MR.field10,
+                              returnfunc: (String s) {
+                                EditDataTable2buffer_MR.field10 = s;
+                              },
+                            ),
+                          ),
+                          SizedBox(
+                            width: 400,
+                            height: 15,
+                            child: Align(
+                                alignment: Alignment.centerLeft,
+                                child: Text("Instrument")),
+                          ),
+                          Container(
+                            width: 400,
+                            height: 40,
+                            // color: Colors.red,
+                            child: ComInputText(
+                              isContr: undercontroltap2_MR,
+                              fnContr: (input) {
+                                undercontroltap2_MR = input;
+                              },
+                              sValue: EditDataTable2_MR.field11,
+                              returnfunc: (String s) {
+                                EditDataTable2buffer_MR.field11 = s;
+                              },
+                            ),
+                          ),
+                          SizedBox(
+                            width: 400,
+                            height: 15,
+                            child: Align(
+                                alignment: Alignment.centerLeft,
+                                child: Text("ItemName")),
+                          ),
+                          Container(
+                            width: 400,
+                            height: 40,
+                            // color: Colors.red,
+                            child: ComInputText(
+                              isContr: undercontroltap2_MR,
+                              fnContr: (input) {
+                                undercontroltap2_MR = input;
+                              },
+                              sValue: EditDataTable2_MR.field12,
+                              returnfunc: (String s) {
+                                EditDataTable2buffer_MR.field12 = s;
+                              },
+                            ),
+                          ),
+                          SizedBox(
+                            width: 400,
+                            height: 15,
+                            child: Align(
+                                alignment: Alignment.centerLeft,
+                                child: Text("Position")),
+                          ),
+                          Container(
+                            width: 400,
+                            height: 40,
+                            // color: Colors.red,
+                            child: ComInputText(
+                              isContr: undercontroltap2_MR,
+                              fnContr: (input) {
+                                undercontroltap2_MR = input;
+                              },
+                              sValue: EditDataTable2_MR.field13,
+                              returnfunc: (String s) {
+                                EditDataTable2buffer_MR.field13 = s;
+                              },
+                            ),
+                          ),
+                        ],
                       ),
-                      ComBtnBlackBorder(
-                          sLabel: "Insert",
-                          func: () {
-                            contextinput
-                                .read<FetchDataTable2Bloc_MR>()
-                                .add(DataSequncePage2_MR.insert);
-                            Navigator.pop(contextinput);
-                          },
-                          nWidth: 80),
+                      Column(
+                        children: [
+                          Align(
+                            alignment: Alignment.topCenter,
+                            child: Container(
+                              width: 400,
+                              height: 20,
+                              // color: Colors.blue,
+                            ),
+                          ),
+                          SizedBox(
+                            width: 400,
+                            height: 15,
+                            child: Align(
+                                alignment: Alignment.centerLeft,
+                                child: Text("Mag")),
+                          ),
+                          Container(
+                            width: 400,
+                            height: 40,
+                            // color: Colors.red,
+                            child: ComInputText(
+                              isContr: undercontroltap2_MR,
+                              fnContr: (input) {
+                                undercontroltap2_MR = input;
+                              },
+                              sValue: EditDataTable2_MR.field14,
+                              returnfunc: (String s) {
+                                EditDataTable2buffer_MR.field14 = s;
+                              },
+                            ),
+                          ),
+                          SizedBox(
+                            width: 400,
+                            height: 15,
+                            child: Align(
+                                alignment: Alignment.centerLeft,
+                                child: Text("Temp")),
+                          ),
+                          Container(
+                            width: 400,
+                            height: 40,
+                            // color: Colors.red,
+                            child: ComInputText(
+                                isContr: undercontroltap2_MR,
+                                fnContr: (input) {
+                                  undercontroltap2_MR = input;
+                                },
+                                sValue: EditDataTable2_MR.field15,
+                                returnfunc: (String s) {
+                                  EditDataTable2buffer_MR.field15 = s;
+                                }),
+                          ),
+                          SizedBox(
+                            width: 400,
+                            height: 15,
+                            child: Align(
+                                alignment: Alignment.centerLeft,
+                                child: Text("StdFactor")),
+                          ),
+                          Container(
+                            width: 400,
+                            height: 40,
+                            // color: Colors.red,
+                            child: ComInputText(
+                              isContr: undercontroltap2_MR,
+                              fnContr: (input) {
+                                undercontroltap2_MR = input;
+                              },
+                              sValue: EditDataTable2_MR.field16,
+                              returnfunc: (String s) {
+                                EditDataTable2buffer_MR.field16 = s;
+                              },
+                            ),
+                          ),
+                          SizedBox(
+                            width: 400,
+                            height: 15,
+                            child: Align(
+                                alignment: Alignment.centerLeft,
+                                child: Text("StdMax")),
+                          ),
+                          Container(
+                            width: 400,
+                            height: 40,
+                            // color: Colors.red,
+                            child: ComInputText(
+                              isContr: undercontroltap2_MR,
+                              fnContr: (input) {
+                                undercontroltap2_MR = input;
+                              },
+                              sValue: EditDataTable2_MR.field17,
+                              returnfunc: (String s) {
+                                EditDataTable2buffer_MR.field17 = s;
+                              },
+                            ),
+                          ),
+                          SizedBox(
+                            width: 400,
+                            height: 15,
+                            child: Align(
+                                alignment: Alignment.centerLeft,
+                                child: Text("StdMin")),
+                          ),
+                          Container(
+                            width: 400,
+                            height: 40,
+                            // color: Colors.red,
+                            child: ComInputText(
+                              isContr: undercontroltap2_MR,
+                              fnContr: (input) {
+                                undercontroltap2_MR = input;
+                              },
+                              sValue: EditDataTable2_MR.field18,
+                              returnfunc: (String s) {
+                                EditDataTable2buffer_MR.field18 = s;
+                              },
+                            ),
+                          ),
+                          SizedBox(
+                            width: 400,
+                            height: 15,
+                            // child: Align(
+                            //     alignment: Alignment.centerLeft,
+                            //     child: Text("CODE")),
+                          ),
+                          Container(
+                            width: 400,
+                            height: 40,
+                            // color: Colors.red,
+                            // child: ComInputText(
+                            //   isContr: undercontroltap2_MR,
+                            //   fnContr: (input) {
+                            //     undercontroltap2_MR = input;
+                            //   },
+                            //   sValue: EditDataTable2_MR.field05,
+                            //   returnfunc: (String s) {
+                            //     EditDataTable2buffer_MR.field05 = s;
+                            //   },
+                            // ),
+                          ),
+                          SizedBox(
+                            width: 400,
+                            height: 15,
+                            // child:
+                            //     Align(alignment: Alignment.centerLeft, child: Text("test")),
+                          ),
+                          Container(
+                            width: 400,
+                            height: 40,
+                            // color: Colors.red,
+                            // child: ComInputText(
+                            //   isContr: undercontroltap2_MR,
+                            //   fnContr: (input) {
+                            //     undercontroltap2_MR = input;
+                            //   },
+                            //   sValue: EditDataTable2_MR.field06,
+                            //   returnfunc: (String s) {
+                            //     EditDataTable2buffer_MR.field06 = s;
+                            //   },
+                            // ),
+                          ),
+                        ],
+                      ),
                     ],
                   ),
-                ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Align(
+                    alignment: Alignment.bottomCenter,
+                    child: Container(
+                      width: 460,
+                      height: 40,
+                      // color: Colors.blue,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          ComBtnBlack(
+                              sLabel: "Update",
+                              func: () {
+                                // print(EditDataTable2buffer.field04);
+                                // EditDataTable2buffer = EditDataTable2;
+                                contextinput.read<FetchDataTable2Bloc_MR>().add(
+                                    DataSequncePage2_MR
+                                        .update); //<------------------
+                                Navigator.pop(contextinput);
+                              },
+                              nWidth: 80),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          ComBtnBlackBorder(
+                              sLabel: "Clear",
+                              cBg: Colors.red,
+                              func: () {
+                                undercontroltap2_MR = true;
+                                EditDataTable2_MR = MainStrucTableTap2_MR(
+                                  number: "",
+                                  field01: "",
+                                  field02: "",
+                                  field03: "",
+                                  field04: "",
+                                  field05: "",
+                                  field06: "",
+                                  field07: "",
+                                  field08: "",
+                                  field09: "",
+                                  field10: "",
+                                  field11: "",
+                                  field12: "",
+                                  field13: "",
+                                  field14: "",
+                                  field15: "",
+                                  field16: "",
+                                  field17: "",
+                                  field18: "",
+                                  field19: "",
+                                  field20: "",
+                                );
+
+                                BlocProvider.of<BlocPageRebuild>(contextinput)
+                                    .rebuildPage();
+                              },
+                              nWidth: 80),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          ComBtnBlackBorder(
+                              sLabel: "Insert",
+                              func: () {
+                                contextinput
+                                    .read<FetchDataTable2Bloc_MR>()
+                                    .add(DataSequncePage2_MR.insert);
+                                Navigator.pop(contextinput);
+                              },
+                              nWidth: 80),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
               ),
-            ],
+            ),
           ),
         ),
       );

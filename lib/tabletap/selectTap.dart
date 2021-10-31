@@ -60,7 +60,7 @@ class alltap extends StatelessWidget {
               Row(
                 children: [
                   ComBtnBlackBorder(
-                      sLabel: "User",
+                      sLabel: "Routine MasterCustomer",
                       cBg: selectedTap_MR == 1
                           ? Colors.black
                           : Colors.transparent,
@@ -71,7 +71,7 @@ class alltap extends StatelessWidget {
                       },
                       nWidth: wi),
                   ComBtnBlackBorder(
-                      sLabel: "Customer Data",
+                      sLabel: "Routine MasterLab",
                       cBg: selectedTap_MR == 2
                           ? Colors.black
                           : Colors.transparent,
@@ -82,7 +82,7 @@ class alltap extends StatelessWidget {
                       },
                       nWidth: wi),
                   ComBtnBlackBorder(
-                      sLabel: "Frequency",
+                      sLabel: "Routine MasterTS",
                       cBg: selectedTap_MR == 3
                           ? Colors.black
                           : Colors.transparent,

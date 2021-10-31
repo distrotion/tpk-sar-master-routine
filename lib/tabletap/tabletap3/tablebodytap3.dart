@@ -18,7 +18,7 @@ import 'package:pick_edit_datatable/widget/ComYNPopup.dart';
 import 'datatap3/datatap3.dart';
 import 'modelintable.dart';
 
-int ListTable3Status = 0;
+int ListTable3Status_MR = 0;
 
 class DataListTable3 extends StatefulWidget {
   const DataListTable3({Key? key, required this.datainput}) : super(key: key);
@@ -28,8 +28,8 @@ class DataListTable3 extends StatefulWidget {
 }
 
 class _DataListTable3State extends State<DataListTable3> {
-  int nCurrentSortIndex = 0; //index from Header DataColumn
-  bool isSortAscending = true;
+  int nCurrentSortIndex_MR = 0; //index from Header DataColumn
+  bool isSortAscending_MR = true;
 
   @override
   Widget build(BuildContext context) {
@@ -56,14 +56,70 @@ class _DataListTable3State extends State<DataListTable3> {
             Listdata_Clone.sort(
                 (item1, item2) => item1.field03.compareTo(item2.field03));
             break;
-          // case 4:
-          //   Listdata_Clone.sort(
-          //       (item1, item2) => item1.field04.compareTo(item2.field04));
-          //   break;
-          // case 5:
-          //   Listdata_Clone.sort(
-          //       (item1, item2) => item1.field05.compareTo(item2.field05));
-          //   break;
+          case 4:
+            Listdata_Clone.sort(
+                (item1, item2) => item1.field04.compareTo(item2.field04));
+            break;
+          case 5:
+            Listdata_Clone.sort(
+                (item1, item2) => item1.field05.compareTo(item2.field05));
+            break;
+          case 6:
+            Listdata_Clone.sort(
+                (item1, item2) => item1.field06.compareTo(item2.field06));
+            break;
+          case 7:
+            Listdata_Clone.sort(
+                (item1, item2) => item1.field07.compareTo(item2.field07));
+            break;
+          case 8:
+            Listdata_Clone.sort(
+                (item1, item2) => item1.field08.compareTo(item2.field08));
+            break;
+          case 9:
+            Listdata_Clone.sort(
+                (item1, item2) => item1.field09.compareTo(item2.field09));
+            break;
+          case 10:
+            Listdata_Clone.sort(
+                (item1, item2) => item1.field10.compareTo(item2.field10));
+            break;
+          case 11:
+            Listdata_Clone.sort(
+                (item1, item2) => item1.field11.compareTo(item2.field11));
+            break;
+          case 12:
+            Listdata_Clone.sort(
+                (item1, item2) => item1.field12.compareTo(item2.field12));
+            break;
+          case 13:
+            Listdata_Clone.sort(
+                (item1, item2) => item1.field13.compareTo(item2.field13));
+            break;
+          case 14:
+            Listdata_Clone.sort(
+                (item1, item2) => item1.field14.compareTo(item2.field14));
+            break;
+          case 15:
+            Listdata_Clone.sort(
+                (item1, item2) => item1.field15.compareTo(item2.field15));
+            break;
+          case 16:
+            Listdata_Clone.sort(
+                (item1, item2) => item1.field16.compareTo(item2.field16));
+            break;
+          case 17:
+            Listdata_Clone.sort(
+                (item1, item2) => item1.field17.compareTo(item2.field17));
+            break;
+          case 18:
+            Listdata_Clone.sort(
+                (item1, item2) => item1.field18.compareTo(item2.field18));
+            break;
+          case 19:
+            Listdata_Clone.sort(
+                (item1, item2) => item1.field19.compareTo(item2.field19));
+            break;
         }
       } else {
         switch (nIndex) {
@@ -79,20 +135,76 @@ class _DataListTable3State extends State<DataListTable3> {
             Listdata_Clone.sort(
                 (item1, item2) => item2.field03.compareTo(item1.field03));
             break;
-          // case 4:
-          //   Listdata_Clone.sort(
-          //       (item1, item2) => item2.field04.compareTo(item1.field04));
-          //   break;
-          // case 5:
-          //   Listdata_Clone.sort(
-          //       (item1, item2) => item2.field05.compareTo(item1.field05));
-          //   break;
+          case 4:
+            Listdata_Clone.sort(
+                (item1, item2) => item2.field04.compareTo(item1.field04));
+            break;
+          case 5:
+            Listdata_Clone.sort(
+                (item1, item2) => item2.field05.compareTo(item1.field05));
+            break;
+          case 6:
+            Listdata_Clone.sort(
+                (item1, item2) => item2.field06.compareTo(item1.field06));
+            break;
+          case 7:
+            Listdata_Clone.sort(
+                (item1, item2) => item2.field07.compareTo(item1.field07));
+            break;
+          case 8:
+            Listdata_Clone.sort(
+                (item1, item2) => item2.field08.compareTo(item1.field08));
+            break;
+          case 9:
+            Listdata_Clone.sort(
+                (item1, item2) => item2.field09.compareTo(item1.field09));
+            break;
+          case 10:
+            Listdata_Clone.sort(
+                (item1, item2) => item2.field10.compareTo(item1.field10));
+            break;
+          case 11:
+            Listdata_Clone.sort(
+                (item1, item2) => item2.field11.compareTo(item1.field11));
+            break;
+          case 12:
+            Listdata_Clone.sort(
+                (item1, item2) => item2.field12.compareTo(item1.field12));
+            break;
+          case 13:
+            Listdata_Clone.sort(
+                (item1, item2) => item2.field13.compareTo(item1.field13));
+            break;
+          case 14:
+            Listdata_Clone.sort(
+                (item1, item2) => item2.field14.compareTo(item1.field14));
+            break;
+          case 15:
+            Listdata_Clone.sort(
+                (item1, item2) => item2.field15.compareTo(item1.field15));
+            break;
+          case 16:
+            Listdata_Clone.sort(
+                (item1, item2) => item2.field16.compareTo(item1.field16));
+            break;
+          case 17:
+            Listdata_Clone.sort(
+                (item1, item2) => item2.field17.compareTo(item1.field17));
+            break;
+          case 18:
+            Listdata_Clone.sort(
+                (item1, item2) => item2.field18.compareTo(item1.field18));
+            break;
+          case 19:
+            Listdata_Clone.sort(
+                (item1, item2) => item2.field19.compareTo(item1.field19));
+            break;
         }
       }
       //BlocPatientList.sort();
       setState(() {
-        nCurrentSortIndex = columnIndex;
-        isSortAscending = ascending;
+        nCurrentSortIndex_MR = columnIndex;
+        isSortAscending_MR = ascending;
       });
     }
 
@@ -101,7 +213,7 @@ class _DataListTable3State extends State<DataListTable3> {
     void _tapView(MainStrucTableTap3_MR s) {
       //click all
       // print("123");
-      ListTable3Status = 1;
+      ListTable3Status_MR = 1;
       EditDataTable3_MR = s;
       EditDataTable3buffer_MR = s;
 
@@ -213,7 +325,7 @@ class _DataListTable3State extends State<DataListTable3> {
                 child: ComBtnBlackBorder(
                     sLabel: "New",
                     func: () {
-                      ListTable3Status = 0;
+                      ListTable3Status_MR = 0;
                       MainStrucTableTap3_MR Zerodata = MainStrucTableTap3_MR(
                         number: "",
                         field01: "",
@@ -226,6 +338,16 @@ class _DataListTable3State extends State<DataListTable3> {
                         field08: "",
                         field09: "",
                         field10: "",
+                        field11: "",
+                        field12: "",
+                        field13: "",
+                        field14: "",
+                        field15: "",
+                        field16: "",
+                        field17: "",
+                        field18: "",
+                        field19: "",
+                        field20: "",
                       );
                       // CustFull = '';
                       // FrequencyRequest = '';
@@ -247,8 +369,8 @@ class _DataListTable3State extends State<DataListTable3> {
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child: DataTable(
-              sortColumnIndex: nCurrentSortIndex,
-              sortAscending: isSortAscending,
+              sortColumnIndex: nCurrentSortIndex_MR,
+              sortAscending: isSortAscending_MR,
               showCheckboxColumn:
                   false, //Hide checkbox that come from tap row 'onselectchanged'
               columnSpacing: 10,
@@ -256,15 +378,43 @@ class _DataListTable3State extends State<DataListTable3> {
               // Header Column -----------------------------------------------------------
               columns: [
                 _getDataColumn(
-                    1, "NO", 'Sort Field 1', nDataColumnWidth, tapSort),
-                _getDataColumn(2, "Frequency ID", 'Sort Field 2',
+                    1, "Id", 'Sort Field 1', nDataColumnWidth, tapSort),
+                _getDataColumn(
+                    2, "CustId", 'Sort Field 2', nDataColumnWidth, tapSort),
+                _getDataColumn(
+                    3, "CustFull", 'Sort Field 3', nDataColumnWidth, tapSort),
+                _getDataColumn(
+                    4, "CustShort", 'Sort Field 4', nDataColumnWidth, tapSort),
+                _getDataColumn(5, "FrequencyRequest", 'Sort Field 5',
+                    nDataColumnWidth, tapSort),
+                _getDataColumn(6, "SampleGroup", 'Sort Field 6',
                     nDataColumnWidth, tapSort),
                 _getDataColumn(
-                    3, "Frequency", 'Sort Field 3', nDataColumnWidth, tapSort),
-                // _getDataColumn(
-                //     4, "Field 4", 'Sort Field 4', nDataColumnWidth, tapSort),
-                // _getDataColumn(
-                //     5, "Field 5", 'Sort Field 5', nDataColumnWidth, tapSort),
+                    7, "SampleType", 'Sort Field 7', nDataColumnWidth, tapSort),
+                _getDataColumn(
+                    8, "SampleTank", 'Sort Field 8', nDataColumnWidth, tapSort),
+                _getDataColumn(
+                    9, "SampleName", 'Sort Field 9', nDataColumnWidth, tapSort),
+                _getDataColumn(10, "Frequency", 'Sort Field 10',
+                    nDataColumnWidth, tapSort),
+                _getDataColumn(
+                    11, "ItemNo", 'Sort Field 11', nDataColumnWidth, tapSort),
+                _getDataColumn(12, "Instrument", 'Sort Field 12',
+                    nDataColumnWidth, tapSort),
+                _getDataColumn(
+                    13, "ItemName", 'Sort Field 13', nDataColumnWidth, tapSort),
+                _getDataColumn(
+                    14, "Position", 'Sort Field 14', nDataColumnWidth, tapSort),
+                _getDataColumn(
+                    15, "Mag", 'Sort Field 15', nDataColumnWidth, tapSort),
+                _getDataColumn(
+                    16, "Temp", 'Sort Field 16', nDataColumnWidth, tapSort),
+                _getDataColumn(17, "StdFactor", 'Sort Field 17',
+                    nDataColumnWidth, tapSort),
+                _getDataColumn(
+                    18, "StdMax", 'Sort Field 18', nDataColumnWidth, tapSort),
+                _getDataColumn(
+                    19, "StdMin", 'Sort Field 19', nDataColumnWidth, tapSort),
                 _getBlankDataColumn(nDataColumnWidthIcon),
               ],
               // Cell Row  -----------------------------------------------------------
@@ -332,8 +482,22 @@ List<DataRow> _getDataRowList(
         Listdata_Clone[n].field01,
         Listdata_Clone[n].field02,
         Listdata_Clone[n].field03,
-        // Listdata_Clone[n].field04,
-        // Listdata_Clone[n].field05,
+        Listdata_Clone[n].field04,
+        Listdata_Clone[n].field05,
+        Listdata_Clone[n].field06,
+        Listdata_Clone[n].field07,
+        Listdata_Clone[n].field08,
+        Listdata_Clone[n].field09,
+        Listdata_Clone[n].field10,
+        Listdata_Clone[n].field11,
+        Listdata_Clone[n].field12,
+        Listdata_Clone[n].field13,
+        Listdata_Clone[n].field14,
+        Listdata_Clone[n].field15,
+        Listdata_Clone[n].field16,
+        Listdata_Clone[n].field17,
+        Listdata_Clone[n].field18,
+        Listdata_Clone[n].field19,
         nDataColumnWidth,
         nDataColumnWidthIcon,
         nDataWidthIcon,
@@ -354,8 +518,22 @@ DataRow _getDataRow(
     String field01,
     String field02,
     String field03,
-    // String field04,
-    // String field05,
+    String field04,
+    String field05,
+    String field06,
+    String field07,
+    String field08,
+    String field09,
+    String field10,
+    String field11,
+    String field12,
+    String field13,
+    String field14,
+    String field15,
+    String field16,
+    String field17,
+    String field18,
+    String field19,
     double nDataColumnWidth,
     double nDataColumnWidthIcon,
     double nDataWidthIcon,
@@ -372,9 +550,23 @@ DataRow _getDataRow(
         _getDataCell_Label(number, nDataColumnWidth),
         _getDataCell_Label(field01, nDataColumnWidth),
         _getDataCell_Label(field02, nDataColumnWidth),
-        // _getDataCell_Label(field03, nDataColumnWidth),
-        // _getDataCell_Label(field04, nDataColumnWidth),
-        // _getDataCell_Label(field05, nDataColumnWidth),
+        _getDataCell_Label(field03, nDataColumnWidth),
+        _getDataCell_Label(field04, nDataColumnWidth),
+        _getDataCell_Label(field05, nDataColumnWidth),
+        _getDataCell_Label(field06, nDataColumnWidth),
+        _getDataCell_Label(field07, nDataColumnWidth),
+        _getDataCell_Label(field08, nDataColumnWidth),
+        _getDataCell_Label(field09, nDataColumnWidth),
+        _getDataCell_Label(field10, nDataColumnWidth),
+        _getDataCell_Label(field11, nDataColumnWidth),
+        _getDataCell_Label(field12, nDataColumnWidth),
+        _getDataCell_Label(field13, nDataColumnWidth),
+        _getDataCell_Label(field14, nDataColumnWidth),
+        _getDataCell_Label(field15, nDataColumnWidth),
+        _getDataCell_Label(field16, nDataColumnWidth),
+        _getDataCell_Label(field17, nDataColumnWidth),
+        _getDataCell_Label(field18, nDataColumnWidth),
+        // _getDataCell_Label(field19, nDataColumnWidth),
         _getDataCell_Icon(number, funcEdit, funcDelete, nDataColumnWidthIcon,
             nDataWidthIcon, nMarginToMakeIconSmaller, getData),
       ],
@@ -474,195 +666,602 @@ void _ConsoleBox(MainStrucTableTap3_MR input, BuildContext contextinput,
     builder: (BuildContext context) {
       DropDownData _datadropdown = dropdowndata;
       return Dialog(
-        child: Container(
-          decoration: BoxDecoration(
-            color: CustomTheme.colorGreyBg,
-            borderRadius: BorderRadius.all(Radius.circular(24)),
-            boxShadow: [
-              BoxShadow(
-                  color: CustomTheme.colorShadowBgStrong,
-                  offset: Offset(0, 0),
-                  blurRadius: 10,
-                  spreadRadius: 0)
-            ],
-          ),
-          width: 500,
-          height: 250,
-          child: Column(
-            // mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Align(
-                alignment: Alignment.topCenter,
-                child: Container(
-                  width: 460,
-                  height: 20,
-                  // color: Colors.blue,
-                ),
-              ),
-              SizedBox(
-                width: 400,
-                height: 15,
-                child:
-                    Align(alignment: Alignment.centerLeft, child: Text("NO")),
-              ),
-              Container(
-                width: 400,
-                height: 40,
-                // color: Colors.red,
-                child: ComInputText(
-                  isContr: undercontroltap3_MR,
-                  fnContr: (input) {
-                    undercontroltap3_MR = input;
-                  },
-                  sValue: EditDataTable3_MR.number,
-                  returnfunc: () {},
-                  isEnabled: false,
-                ),
-              ),
-              SizedBox(
-                width: 400,
-                height: 15,
-                child: Align(
-                    alignment: Alignment.centerLeft,
-                    child: Text("FrequencyId")),
-              ),
-              Container(
-                width: 400,
-                height: 40,
-                // color: Colors.red,
-                child: ComInputText(
-                    isContr: undercontroltap3_MR,
-                    fnContr: (input) {
-                      undercontroltap3_MR = input;
-                    },
-                    sValue: EditDataTable3_MR.field01,
-                    returnfunc: (String s) {
-                      EditDataTable3buffer_MR.field01 = s;
-                    }),
-              ),
-              SizedBox(
-                width: 400,
-                height: 15,
-                child: Align(
-                    alignment: Alignment.centerLeft, child: Text("Frequency")),
-              ),
-              Container(
-                width: 400,
-                height: 40,
-                // color: Colors.red,
-                child: ComInputText(
-                  isContr: undercontroltap3_MR,
-                  fnContr: (input) {
-                    undercontroltap3_MR = input;
-                  },
-                  sValue: EditDataTable3_MR.field02,
-                  returnfunc: (String s) {
-                    EditDataTable3buffer_MR.field02 = s;
-                  },
-                ),
-              ),
-              // SizedBox(
-              //   width: 400,
-              //   height: 15,
-              //   child:
-              //       Align(alignment: Alignment.centerLeft, child: Text("test")),
-              // ),
-              // Container(
-              //   width: 400,
-              //   height: 40,
-              //   // color: Colors.red,
-              //   child: ComInputText(
-              //     isContr: undercontroltap3,
-              //     fnContr: (input) {
-              //       undercontroltap3 = input;
-              //     },
-              //     sValue: EditDataTable3.field03,
-              //     returnfunc: (String s) {
-              //       EditDataTable3buffer.field03 = s;
-              //     },
-              //   ),
-              // ),
-              // SizedBox(
-              //   height: 5,
-              // ),
-              // Container(
-              //   width: 400,
-              //   height: 40,
-              //   // color: Colors.red,
-              //   child: ComInputText(
-              //     isContr: undercontroltap3,
-              //     fnContr: (input) {
-              //       undercontroltap3 = input;
-              //     },
-              //     sValue: EditDataTable3.field04,
-              //     returnfunc: (String s) {
-              //       EditDataTable3buffer.field04 = s;
-              //     },
-              //   ),
-              // ),
-              SizedBox(
-                height: 10,
-              ),
-              Align(
-                alignment: Alignment.bottomCenter,
-                child: Container(
-                  width: 460,
-                  height: 40,
-                  // color: Colors.blue,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
+        child: SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Container(
+            decoration: BoxDecoration(
+              color: CustomTheme.colorGreyBg,
+              borderRadius: BorderRadius.all(Radius.circular(24)),
+              boxShadow: [
+                BoxShadow(
+                    color: CustomTheme.colorShadowBgStrong,
+                    offset: Offset(0, 0),
+                    blurRadius: 10,
+                    spreadRadius: 0)
+              ],
+            ),
+            width: 1350,
+            height: 500,
+            child: SingleChildScrollView(
+              child: Column(
+                // mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      ComBtnBlack(
-                          sLabel: "Update",
-                          func: () {
-                            // EditDataTable3buffer = EditDataTable3;
-                            contextinput.read<FetchDataTable3Bloc_MR>().add(
-                                DataSequncePage3_MR
-                                    .update); //<------------------
-                            Navigator.pop(contextinput);
-                          },
-                          nWidth: 134),
-                      SizedBox(
-                        width: 10,
+                      Column(
+                        children: [
+                          Align(
+                            alignment: Alignment.topCenter,
+                            child: Container(
+                              width: 400,
+                              height: 20,
+                              // color: Colors.blue,
+                            ),
+                          ),
+                          SizedBox(
+                            width: 400,
+                            height: 15,
+                            child: Align(
+                                alignment: Alignment.centerLeft,
+                                child: Text("Id")),
+                          ),
+                          Container(
+                            width: 400,
+                            height: 40,
+                            // color: Colors.red,
+                            child: ComInputText(
+                              isContr: undercontroltap3_MR,
+                              fnContr: (input) {
+                                undercontroltap3_MR = input;
+                              },
+                              sValue: EditDataTable3_MR.number,
+                              returnfunc: () {},
+                              isEnabled: false,
+                            ),
+                          ),
+                          SizedBox(
+                            width: 400,
+                            height: 15,
+                            child: Align(
+                                alignment: Alignment.centerLeft,
+                                child: Text("CustId")),
+                          ),
+                          Container(
+                            width: 400,
+                            height: 40,
+                            // color: Colors.red,
+                            child: ComInputText(
+                                isContr: undercontroltap3_MR,
+                                fnContr: (input) {
+                                  undercontroltap3_MR = input;
+                                },
+                                sValue: EditDataTable3_MR.field01,
+                                returnfunc: (String s) {
+                                  EditDataTable3buffer_MR.field01 = s;
+                                }),
+                          ),
+                          SizedBox(
+                            width: 400,
+                            height: 15,
+                            child: Align(
+                                alignment: Alignment.centerLeft,
+                                child: Text("CustFull")),
+                          ),
+                          Container(
+                            width: 400,
+                            height: 40,
+                            // color: Colors.red,
+                            child: ComInputText(
+                              isContr: undercontroltap3_MR,
+                              fnContr: (input) {
+                                undercontroltap3_MR = input;
+                              },
+                              sValue: EditDataTable3_MR.field02,
+                              returnfunc: (String s) {
+                                EditDataTable3buffer_MR.field02 = s;
+                              },
+                            ),
+                          ),
+                          SizedBox(
+                            width: 400,
+                            height: 15,
+                            child: Align(
+                                alignment: Alignment.centerLeft,
+                                child: Text("CustShort")),
+                          ),
+                          Container(
+                            width: 400,
+                            height: 40,
+                            // color: Colors.red,
+                            child: ComInputText(
+                              isContr: undercontroltap3_MR,
+                              fnContr: (input) {
+                                undercontroltap3_MR = input;
+                              },
+                              sValue: EditDataTable3_MR.field03,
+                              returnfunc: (String s) {
+                                EditDataTable3buffer_MR.field03 = s;
+                              },
+                            ),
+                          ),
+                          SizedBox(
+                            width: 400,
+                            height: 15,
+                            child: Align(
+                                alignment: Alignment.centerLeft,
+                                child: Text("FrequencyRequest")),
+                          ),
+                          Container(
+                            width: 400,
+                            height: 40,
+                            // color: Colors.red,
+                            child: ComInputText(
+                              isContr: undercontroltap3_MR,
+                              fnContr: (input) {
+                                undercontroltap3_MR = input;
+                              },
+                              sValue: EditDataTable3_MR.field04,
+                              returnfunc: (String s) {
+                                EditDataTable3buffer_MR.field04 = s;
+                              },
+                            ),
+                          ),
+                          SizedBox(
+                            width: 400,
+                            height: 15,
+                            child: Align(
+                                alignment: Alignment.centerLeft,
+                                child: Text("SampleGroup")),
+                          ),
+                          Container(
+                            width: 400,
+                            height: 40,
+                            // color: Colors.red,
+                            child: ComInputText(
+                              isContr: undercontroltap3_MR,
+                              fnContr: (input) {
+                                undercontroltap3_MR = input;
+                              },
+                              sValue: EditDataTable3_MR.field05,
+                              returnfunc: (String s) {
+                                EditDataTable3buffer_MR.field05 = s;
+                              },
+                            ),
+                          ),
+                          SizedBox(
+                            width: 400,
+                            height: 15,
+                            child: Align(
+                                alignment: Alignment.centerLeft,
+                                child: Text("SampleType")),
+                          ),
+                          Container(
+                            width: 400,
+                            height: 40,
+                            // color: Colors.red,
+                            child: ComInputText(
+                              isContr: undercontroltap3_MR,
+                              fnContr: (input) {
+                                undercontroltap3_MR = input;
+                              },
+                              sValue: EditDataTable3_MR.field06,
+                              returnfunc: (String s) {
+                                EditDataTable3buffer_MR.field06 = s;
+                              },
+                            ),
+                          ),
+                        ],
                       ),
-                      ComBtnBlackBorder(
-                          sLabel: "Clear",
-                          cBg: Colors.red,
-                          func: () {
-                            undercontroltap3_MR = true;
-                            EditDataTable3_MR = MainStrucTableTap3_MR(
-                                number: "",
-                                field01: "",
-                                field02: "",
-                                field03: "",
-                                field04: "",
-                                field05: "",
-                                field06: "",
-                                field07: "",
-                                field08: "",
-                                field09: "",
-                                field10: "");
-                            BlocProvider.of<BlocPageRebuild>(contextinput)
-                                .rebuildPage();
-                          },
-                          nWidth: 134),
-                      SizedBox(
-                        width: 10,
+                      Column(
+                        children: [
+                          Align(
+                            alignment: Alignment.topCenter,
+                            child: Container(
+                              width: 400,
+                              height: 20,
+                              // color: Colors.blue,
+                            ),
+                          ),
+                          SizedBox(
+                            width: 400,
+                            height: 15,
+                            child: Align(
+                                alignment: Alignment.centerLeft,
+                                child: Text("SampleTank")),
+                          ),
+                          Container(
+                            width: 400,
+                            height: 40,
+                            // color: Colors.red,
+                            child: ComInputText(
+                              isContr: undercontroltap3_MR,
+                              fnContr: (input) {
+                                undercontroltap3_MR = input;
+                              },
+                              sValue: EditDataTable3_MR.field07,
+                              returnfunc: (String s) {
+                                EditDataTable3buffer_MR.field07 = s;
+                              },
+                            ),
+                          ),
+                          SizedBox(
+                            width: 400,
+                            height: 15,
+                            child: Align(
+                                alignment: Alignment.centerLeft,
+                                child: Text("SampleName")),
+                          ),
+                          Container(
+                            width: 400,
+                            height: 40,
+                            // color: Colors.red,
+                            child: ComInputText(
+                                isContr: undercontroltap3_MR,
+                                fnContr: (input) {
+                                  undercontroltap3_MR = input;
+                                },
+                                sValue: EditDataTable3_MR.field08,
+                                returnfunc: (String s) {
+                                  EditDataTable3buffer_MR.field08 = s;
+                                }),
+                          ),
+                          SizedBox(
+                            width: 400,
+                            height: 15,
+                            child: Align(
+                                alignment: Alignment.centerLeft,
+                                child: Text("Frequency")),
+                          ),
+                          Container(
+                            width: 400,
+                            height: 40,
+                            // color: Colors.red,
+                            child: ComInputText(
+                              isContr: undercontroltap3_MR,
+                              fnContr: (input) {
+                                undercontroltap3_MR = input;
+                              },
+                              sValue: EditDataTable3_MR.field09,
+                              returnfunc: (String s) {
+                                EditDataTable3buffer_MR.field09 = s;
+                              },
+                            ),
+                          ),
+                          SizedBox(
+                            width: 400,
+                            height: 15,
+                            child: Align(
+                                alignment: Alignment.centerLeft,
+                                child: Text("ItemNo")),
+                          ),
+                          Container(
+                            width: 400,
+                            height: 40,
+                            // color: Colors.red,
+                            child: ComInputText(
+                              isContr: undercontroltap3_MR,
+                              fnContr: (input) {
+                                undercontroltap3_MR = input;
+                              },
+                              sValue: EditDataTable3_MR.field10,
+                              returnfunc: (String s) {
+                                EditDataTable3buffer_MR.field10 = s;
+                              },
+                            ),
+                          ),
+                          SizedBox(
+                            width: 400,
+                            height: 15,
+                            child: Align(
+                                alignment: Alignment.centerLeft,
+                                child: Text("Instrument")),
+                          ),
+                          Container(
+                            width: 400,
+                            height: 40,
+                            // color: Colors.red,
+                            child: ComInputText(
+                              isContr: undercontroltap3_MR,
+                              fnContr: (input) {
+                                undercontroltap3_MR = input;
+                              },
+                              sValue: EditDataTable3_MR.field11,
+                              returnfunc: (String s) {
+                                EditDataTable3buffer_MR.field11 = s;
+                              },
+                            ),
+                          ),
+                          SizedBox(
+                            width: 400,
+                            height: 15,
+                            child: Align(
+                                alignment: Alignment.centerLeft,
+                                child: Text("ItemName")),
+                          ),
+                          Container(
+                            width: 400,
+                            height: 40,
+                            // color: Colors.red,
+                            child: ComInputText(
+                              isContr: undercontroltap3_MR,
+                              fnContr: (input) {
+                                undercontroltap3_MR = input;
+                              },
+                              sValue: EditDataTable3_MR.field12,
+                              returnfunc: (String s) {
+                                EditDataTable3buffer_MR.field12 = s;
+                              },
+                            ),
+                          ),
+                          SizedBox(
+                            width: 400,
+                            height: 15,
+                            child: Align(
+                                alignment: Alignment.centerLeft,
+                                child: Text("Position")),
+                          ),
+                          Container(
+                            width: 400,
+                            height: 40,
+                            // color: Colors.red,
+                            child: ComInputText(
+                              isContr: undercontroltap3_MR,
+                              fnContr: (input) {
+                                undercontroltap3_MR = input;
+                              },
+                              sValue: EditDataTable3_MR.field13,
+                              returnfunc: (String s) {
+                                EditDataTable3buffer_MR.field13 = s;
+                              },
+                            ),
+                          ),
+                        ],
                       ),
-                      ComBtnBlackBorder(
-                          sLabel: "Insert",
-                          func: () {
-                            contextinput
-                                .read<FetchDataTable3Bloc_MR>()
-                                .add(DataSequncePage3_MR.insert);
-                            Navigator.pop(contextinput);
-                          },
-                          nWidth: 134),
+                      Column(
+                        children: [
+                          Align(
+                            alignment: Alignment.topCenter,
+                            child: Container(
+                              width: 400,
+                              height: 20,
+                              // color: Colors.blue,
+                            ),
+                          ),
+                          SizedBox(
+                            width: 400,
+                            height: 15,
+                            child: Align(
+                                alignment: Alignment.centerLeft,
+                                child: Text("Mag")),
+                          ),
+                          Container(
+                            width: 400,
+                            height: 40,
+                            // color: Colors.red,
+                            child: ComInputText(
+                              isContr: undercontroltap3_MR,
+                              fnContr: (input) {
+                                undercontroltap3_MR = input;
+                              },
+                              sValue: EditDataTable3_MR.field14,
+                              returnfunc: (String s) {
+                                EditDataTable3buffer_MR.field14 = s;
+                              },
+                              // isEnabled: false,
+                            ),
+                          ),
+                          SizedBox(
+                            width: 400,
+                            height: 15,
+                            child: Align(
+                                alignment: Alignment.centerLeft,
+                                child: Text("Temp")),
+                          ),
+                          Container(
+                            width: 400,
+                            height: 40,
+                            // color: Colors.red,
+                            child: ComInputText(
+                                isContr: undercontroltap3_MR,
+                                fnContr: (input) {
+                                  undercontroltap3_MR = input;
+                                },
+                                sValue: EditDataTable3_MR.field15,
+                                returnfunc: (String s) {
+                                  EditDataTable3buffer_MR.field15 = s;
+                                }),
+                          ),
+                          SizedBox(
+                            width: 400,
+                            height: 15,
+                            child: Align(
+                                alignment: Alignment.centerLeft,
+                                child: Text("StdFactor")),
+                          ),
+                          Container(
+                            width: 400,
+                            height: 40,
+                            // color: Colors.red,
+                            child: ComInputText(
+                              isContr: undercontroltap3_MR,
+                              fnContr: (input) {
+                                undercontroltap3_MR = input;
+                              },
+                              sValue: EditDataTable3_MR.field16,
+                              returnfunc: (String s) {
+                                EditDataTable3buffer_MR.field16 = s;
+                              },
+                            ),
+                          ),
+                          SizedBox(
+                            width: 400,
+                            height: 15,
+                            child: Align(
+                                alignment: Alignment.centerLeft,
+                                child: Text("StdMax")),
+                          ),
+                          Container(
+                            width: 400,
+                            height: 40,
+                            // color: Colors.red,
+                            child: ComInputText(
+                              isContr: undercontroltap3_MR,
+                              fnContr: (input) {
+                                undercontroltap3_MR = input;
+                              },
+                              sValue: EditDataTable3_MR.field17,
+                              returnfunc: (String s) {
+                                EditDataTable3buffer_MR.field17 = s;
+                              },
+                            ),
+                          ),
+                          SizedBox(
+                            width: 400,
+                            height: 15,
+                            child: Align(
+                                alignment: Alignment.centerLeft,
+                                child: Text("StdMin")),
+                          ),
+                          Container(
+                            width: 400,
+                            height: 40,
+                            // color: Colors.red,
+                            child: ComInputText(
+                              isContr: undercontroltap3_MR,
+                              fnContr: (input) {
+                                undercontroltap3_MR = input;
+                              },
+                              sValue: EditDataTable3_MR.field18,
+                              returnfunc: (String s) {
+                                EditDataTable3buffer_MR.field18 = s;
+                              },
+                            ),
+                          ),
+                          SizedBox(
+                            width: 400,
+                            height: 15,
+                            // child: Align(
+                            //     alignment: Alignment.centerLeft,
+                            //     child: Text("test")),
+                          ),
+                          Container(
+                            width: 400,
+                            height: 40,
+                            // color: Colors.red,
+                            // child: ComInputText(
+                            //   isContr: undercontroltap3_MR,
+                            //   fnContr: (input) {
+                            //     undercontroltap3_MR = input;
+                            //   },
+                            //   sValue: EditDataTable3_MR.field05,
+                            //   returnfunc: (String s) {
+                            //     EditDataTable3buffer_MR.field05 = s;
+                            //   },
+                            // ),
+                          ),
+                          SizedBox(
+                            width: 400,
+                            height: 15,
+                            // child: Align(
+                            //     alignment: Alignment.centerLeft,
+                            //     child: Text("test")),
+                          ),
+                          Container(
+                            width: 400,
+                            height: 40,
+                            // color: Colors.red,
+                            // child: ComInputText(
+                            //   isContr: undercontroltap3_MR,
+                            //   fnContr: (input) {
+                            //     undercontroltap3_MR = input;
+                            //   },
+                            //   sValue: EditDataTable3_MR.field06,
+                            //   returnfunc: (String s) {
+                            //     EditDataTable3buffer_MR.field06 = s;
+                            //   },
+                            // ),
+                          ),
+                        ],
+                      ),
                     ],
                   ),
-                ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Align(
+                    alignment: Alignment.bottomCenter,
+                    child: Container(
+                      width: 460,
+                      height: 40,
+                      // color: Colors.blue,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          ComBtnBlack(
+                              sLabel: "Update",
+                              func: () {
+                                // EditDataTable3buffer = EditDataTable3;
+                                contextinput.read<FetchDataTable3Bloc_MR>().add(
+                                    DataSequncePage3_MR
+                                        .update); //<------------------
+                                Navigator.pop(contextinput);
+                              },
+                              nWidth: 134),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          ComBtnBlackBorder(
+                              sLabel: "Clear",
+                              cBg: Colors.red,
+                              func: () {
+                                undercontroltap3_MR = true;
+                                EditDataTable3_MR = MainStrucTableTap3_MR(
+                                  number: "",
+                                  field01: "",
+                                  field02: "",
+                                  field03: "",
+                                  field04: "",
+                                  field05: "",
+                                  field06: "",
+                                  field07: "",
+                                  field08: "",
+                                  field09: "",
+                                  field10: "",
+                                  field11: "",
+                                  field12: "",
+                                  field13: "",
+                                  field14: "",
+                                  field15: "",
+                                  field16: "",
+                                  field17: "",
+                                  field18: "",
+                                  field19: "",
+                                  field20: "",
+                                );
+                                BlocProvider.of<BlocPageRebuild>(contextinput)
+                                    .rebuildPage();
+                              },
+                              nWidth: 134),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          ComBtnBlackBorder(
+                              sLabel: "Insert",
+                              func: () {
+                                contextinput
+                                    .read<FetchDataTable3Bloc_MR>()
+                                    .add(DataSequncePage3_MR.insert);
+                                Navigator.pop(contextinput);
+                              },
+                              nWidth: 134),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
               ),
-            ],
+            ),
           ),
         ),
       );

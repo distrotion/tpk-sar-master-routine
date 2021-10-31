@@ -18,6 +18,16 @@ MainStrucTableTap1_MR EditDataTable1_MR = MainStrucTableTap1_MR(
   field08: "",
   field09: "",
   field10: "",
+  field11: "",
+  field12: "",
+  field13: "",
+  field14: "",
+  field15: "",
+  field16: "",
+  field17: "",
+  field18: "",
+  field19: "",
+  field20: "",
 );
 
 MainStrucTableTap1_MR EditDataTable1buffer_MR = MainStrucTableTap1_MR(
@@ -32,6 +42,16 @@ MainStrucTableTap1_MR EditDataTable1buffer_MR = MainStrucTableTap1_MR(
   field08: "",
   field09: "",
   field10: "",
+  field11: "",
+  field12: "",
+  field13: "",
+  field14: "",
+  field15: "",
+  field16: "",
+  field17: "",
+  field18: "",
+  field19: "",
+  field20: "",
 );
 
 MainStrucTableTap1_MR DeleteDataTable1buffer_MR = MainStrucTableTap1_MR(
@@ -46,4 +66,14 @@ MainStrucTableTap1_MR DeleteDataTable1buffer_MR = MainStrucTableTap1_MR(
   field08: "",
   field09: "",
   field10: "",
+  field11: "",
+  field12: "",
+  field13: "",
+  field14: "",
+  field15: "",
+  field16: "",
+  field17: "",
+  field18: "",
+  field19: "",
+  field20: "",
 );

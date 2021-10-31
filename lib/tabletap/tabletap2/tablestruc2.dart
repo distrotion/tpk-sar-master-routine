@@ -69,8 +69,8 @@ class __TableStrucMain2State extends State<_TableStrucMain2> {
       });
     }
 
-    EditDataTable2_MR.field04 = Branch_MR;
-    EditDataTable2_MR.field05 = Code_MR;
+    // EditDataTable2_MR.field04 = Branch_MR;
+    // EditDataTable2_MR.field05 = Code_MR;
 
     return ScrollConfiguration(
       behavior: ScrollConfiguration.of(context).copyWith(
