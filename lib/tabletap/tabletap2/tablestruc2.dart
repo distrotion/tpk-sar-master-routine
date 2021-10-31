@@ -43,10 +43,6 @@ class _TableStrucBuffer extends StatelessWidget {
   }
 }
 
-int dropse = 1;
-String Branch = '';
-String Code = '';
-
 class _TableStrucMain2 extends StatefulWidget {
   const _TableStrucMain2({Key? key, this.datainput}) : super(key: key);
 
@@ -73,8 +69,8 @@ class __TableStrucMain2State extends State<_TableStrucMain2> {
       });
     }
 
-    EditDataTable2_MR.field04 = Branch;
-    EditDataTable2_MR.field05 = Code;
+    EditDataTable2_MR.field04 = Branch_MR;
+    EditDataTable2_MR.field05 = Code_MR;
 
     return ScrollConfiguration(
       behavior: ScrollConfiguration.of(context).copyWith(

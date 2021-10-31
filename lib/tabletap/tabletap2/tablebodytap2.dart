@@ -114,8 +114,8 @@ class _DataListTable2State extends State<DataListTable2> {
       EditDataTable2_MR = s;
       EditDataTable2buffer_MR = s;
       undercontroltap2_MR = true;
-      Branch = s.field04;
-      Code = s.field05;
+      Branch_MR = s.field04;
+      Code_MR = s.field05;
 
       context.read<FetchDataTable2Bloc_MR>().add(DataSequncePage2_MR.select);
       _ConsoleBox(s, context, zeroDropDownData);
@@ -491,8 +491,8 @@ void _ConsoleBox(MainStrucTableTap2_MR input, BuildContext contextinput,
     barrierDismissible: true,
     builder: (BuildContext context) {
       // DropDownData _datadropdown = dropdowndata;
-      EditDataTable2_MR.field04 = Branch;
-      EditDataTable2_MR.field05 = Code;
+      EditDataTable2_MR.field04 = Branch_MR;
+      EditDataTable2_MR.field05 = Code_MR;
       return Dialog(
         child: Container(
           decoration: BoxDecoration(
@@ -610,9 +610,9 @@ void _ConsoleBox(MainStrucTableTap2_MR input, BuildContext contextinput,
               EasyDropDown(
                 width: 400,
                 height: 40,
-                value: Branch,
+                value: Branch_MR,
                 onChangeinside: (newValue) {
-                  Branch = newValue!;
+                  Branch_MR = newValue!;
                   EditDataTable2buffer_MR.field04 = newValue;
                   BlocProvider.of<BlocPageRebuild>(contextinput).rebuildPage();
                 },
@@ -627,9 +627,9 @@ void _ConsoleBox(MainStrucTableTap2_MR input, BuildContext contextinput,
               EasyDropDown(
                 width: 400,
                 height: 40,
-                value: Code,
+                value: Code_MR,
                 onChangeinside: (newValue) {
-                  Code = newValue!;
+                  Code_MR = newValue!;
                   EditDataTable2buffer_MR.field05 = newValue;
                   BlocProvider.of<BlocPageRebuild>(contextinput).rebuildPage();
                 },
