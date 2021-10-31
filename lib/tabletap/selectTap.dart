@@ -8,8 +8,8 @@ import 'tabletap3/tablestruc3.dart';
 
 int selectedTap_MR = 1;
 
-class TapMainBody extends StatelessWidget {
-  const TapMainBody({Key? key}) : super(key: key);
+class TapMainBody_MR extends StatelessWidget {
+  const TapMainBody_MR({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
