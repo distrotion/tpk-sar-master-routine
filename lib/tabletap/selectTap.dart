@@ -81,17 +81,17 @@ class alltap extends StatelessWidget {
                         BlocProvider.of<BlocPageRebuild>(context).rebuildPage();
                       },
                       nWidth: wi),
-                  ComBtnBlackBorder(
-                      sLabel: "Routine MasterTS",
-                      cBg: selectedTap_MR == 3
-                          ? Colors.black
-                          : Colors.transparent,
-                      cText: selectedTap_MR == 3 ? Colors.white : null,
-                      func: () {
-                        selectedTap_MR = 3;
-                        BlocProvider.of<BlocPageRebuild>(context).rebuildPage();
-                      },
-                      nWidth: wi),
+                  // ComBtnBlackBorder(
+                  //     sLabel: "Routine MasterTS",
+                  //     cBg: selectedTap_MR == 3
+                  //         ? Colors.black
+                  //         : Colors.transparent,
+                  //     cText: selectedTap_MR == 3 ? Colors.white : null,
+                  //     func: () {
+                  //       selectedTap_MR = 3;
+                  //       BlocProvider.of<BlocPageRebuild>(context).rebuildPage();
+                  //     },
+                  //     nWidth: wi),
                 ],
               ),
             ],

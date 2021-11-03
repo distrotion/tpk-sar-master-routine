@@ -7,8 +7,16 @@ final int nTableCellPerEachPageTable2_MR = 5;
 final int nNumToShowArrowAtPageTable2_MR = 5; //show < > when more than 5 page
 
 // int dropse_MR = 1;
-// String Branch_MR = '';
-// String Code_MR = '';
+String CustFull2_MR = '';
+String SampleGroup2_MR = '';
+String SampleType2_MR = '';
+String SampleTank2_MR = '';
+String SampleName2_MR = '';
+String Frequency2_MR = '';
+String Instrument2_MR = '';
+String ItemName2_MR = '';
+String Position2_MR = '';
+String Temp2_MR = '';
 
 MainStrucTableTap2_MR EditDataTable2_MR = MainStrucTableTap2_MR(
   number: "",

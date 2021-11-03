@@ -33,8 +33,8 @@ class _TableStrucBuffer extends StatelessWidget {
       create: (_) => FetchDataTable1Bloc_MR(),
       child: BlocBuilder<FetchDataTable1Bloc_MR, List<MainStrucTableTap1_MR>>(
         builder: (_, State) {
-          return _TableStrucMain1(
-            datainput: State,
+          return _TableStrucBuffer2(
+            State: State,
           );
         },
       ),
@@ -42,10 +42,50 @@ class _TableStrucBuffer extends StatelessWidget {
   }
 }
 
+class _TableStrucBuffer2 extends StatelessWidget {
+  _TableStrucBuffer2({Key? key, required this.State}) : super(key: key);
+  final List<MainStrucTableTap1_MR> State;
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocProvider(
+      create: (_) => Dropdowndata_MR(),
+      child: BlocBuilder<Dropdowndata_MR, DropDownData_MR>(
+        builder: (_, Statedrop) {
+          return _TableStrucBufferCalldrop(
+              State: State, datadropdown: Statedrop);
+        },
+      ),
+    );
+  }
+}
+
+class _TableStrucBufferCalldrop extends StatelessWidget {
+  _TableStrucBufferCalldrop(
+      {Key? key, required this.State, required this.datadropdown})
+      : super(key: key);
+  final List<MainStrucTableTap1_MR> State;
+  DropDownData_MR datadropdown;
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocProvider(
+      create: (_) => CallDropdowndata_MR(),
+      child: BlocBuilder<CallDropdowndata_MR, CallDropDownDataS_MR>(
+        builder: (_, State2) {
+          return _TableStrucMain1(datainput: State, datadropdown: datadropdown);
+        },
+      ),
+    );
+  }
+}
+
 class _TableStrucMain1 extends StatefulWidget {
-  const _TableStrucMain1({Key? key, this.datainput}) : super(key: key);
+  _TableStrucMain1({Key? key, this.datainput, required this.datadropdown})
+      : super(key: key);
 
   final List<MainStrucTableTap1_MR>? datainput;
+  DropDownData_MR datadropdown;
 
   @override
   __TableStrucMain1State createState() => __TableStrucMain1State();
@@ -56,6 +96,7 @@ class __TableStrucMain1State extends State<_TableStrucMain1> {
   void initState() {
     super.initState();
     context.read<FetchDataTable1Bloc_MR>().add(DataSequncePage1_MR.select);
+    context.read<Dropdowndata_MR>().add(dropdownrequrst_MR.set01);
   }
 
   @override
@@ -68,7 +109,15 @@ class __TableStrucMain1State extends State<_TableStrucMain1> {
       });
     }
 
-    print("xxx");
+    EditDataTable1_MR.field02 = CustFull_MR;
+    EditDataTable1_MR.field06 = FrequencyRequest_MR;
+    EditDataTable1_MR.field07 = Incharge_MR;
+    EditDataTable1_MR.field08 = SubLeader_MR;
+    EditDataTable1_MR.field09 = GL_MR;
+    EditDataTable1_MR.field10 = JP_MR;
+    EditDataTable1_MR.field11 = DMG_MR;
+
+    DropDownData_MR _datadropdown = widget.datadropdown;
 
     return ScrollConfiguration(
       behavior: ScrollConfiguration.of(context).copyWith(
@@ -99,8 +148,7 @@ class __TableStrucMain1State extends State<_TableStrucMain1> {
                     ],
                   ),
                   child: DataListTable(
-                    datainput: _datainput,
-                  ),
+                      datainput: _datainput, dropdowndata: _datadropdown),
                 ),
                 BottomPageNum(
                   func: tapChangeTablePage,
@@ -109,238 +157,6 @@ class __TableStrucMain1State extends State<_TableStrucMain1> {
               ],
             ),
           ),
-          // Padding(
-          //   padding: EdgeInsetsDirectional.only(start: 20, end: 20),
-          //   child: Container(
-          //     decoration: BoxDecoration(
-          //       color: CustomTheme.colorGreyBg,
-          //       // borderRadius: BorderRadius.all(Radius.circular(24)),
-          //       boxShadow: [
-          //         BoxShadow(
-          //             color: CustomTheme.colorShadowBgStrong,
-          //             offset: Offset(0, 0),
-          //             blurRadius: 10,
-          //             spreadRadius: 0)
-          //       ],
-          //     ),
-          //     width: 400,
-          //     height: 420,
-          //     child: Padding(
-          //       padding: EdgeInsetsDirectional.only(start: 30, end: 30),
-          //       child: Column(
-          //         // mainAxisAlignment: MainAxisAlignment.center,
-          //         children: [
-          //           Column(
-          //             children: [
-          //               Align(
-          //                 alignment: Alignment.topCenter,
-          //                 child: Container(
-          //                   width: 400,
-          //                   height: 30,
-          //                   // color: Colors.blue,
-          //                 ),
-          //               ),
-          //               SizedBox(
-          //                 height: 10,
-          //               ),
-          //               Container(
-          //                 width: 400,
-          //                 height: 40,
-          //                 // color: Colors.red,
-          //                 child: ComInputText(
-          //                   isContr: undercontroltap1,
-          //                   fnContr: (input) {
-          //                     undercontroltap1 = input;
-          //                   },
-          //                   sValue: EditDataTable1.number,
-          //                   returnfunc: () {},
-          //                   isEnabled: false,
-          //                 ),
-          //               ),
-          //               SizedBox(
-          //                 height: 5,
-          //               ),
-          //               Container(
-          //                 width: 400,
-          //                 height: 40,
-          //                 // color: Colors.red,
-          //                 child: ComInputText(
-          //                     isContr: undercontroltap1,
-          //                     fnContr: (input) {
-          //                       undercontroltap1 = input;
-          //                     },
-          //                     sValue: EditDataTable1.field01,
-          //                     returnfunc: (String s) {
-          //                       EditDataTable1buffer.field01 = s;
-          //                     }),
-          //               ),
-          //               SizedBox(
-          //                 height: 5,
-          //               ),
-          //               Container(
-          //                 width: 400,
-          //                 height: 40,
-          //                 // color: Colors.red,
-          //                 child: ComInputText(
-          //                   isContr: undercontroltap1,
-          //                   fnContr: (input) {
-          //                     undercontroltap1 = input;
-          //                   },
-          //                   sValue: EditDataTable1.field02,
-          //                   returnfunc: (String s) {
-          //                     EditDataTable1buffer.field02 = s;
-          //                   },
-          //                 ),
-          //               ),
-          //               SizedBox(
-          //                 height: 5,
-          //               ),
-          //               Container(
-          //                 width: 400,
-          //                 height: 40,
-          //                 // color: Colors.red,
-          //                 child: ComInputText(
-          //                   isContr: undercontroltap1,
-          //                   fnContr: (input) {
-          //                     undercontroltap1 = input;
-          //                   },
-          //                   sValue: EditDataTable1.field03,
-          //                   returnfunc: (String s) {
-          //                     EditDataTable1buffer.field03 = s;
-          //                   },
-          //                 ),
-          //               ),
-          //               SizedBox(
-          //                 height: 5,
-          //               ),
-          //               Container(
-          //                 width: 400,
-          //                 height: 40,
-          //                 // color: Colors.red,
-          //                 child: ComInputText(
-          //                   isContr: undercontroltap1,
-          //                   fnContr: (input) {
-          //                     undercontroltap1 = input;
-          //                   },
-          //                   sValue: EditDataTable1.field04,
-          //                   returnfunc: (String s) {
-          //                     EditDataTable1buffer.field04 = s;
-          //                   },
-          //                 ),
-          //               ),
-          //               SizedBox(
-          //                 height: 5,
-          //               ),
-          //               Container(
-          //                 width: 400,
-          //                 height: 40,
-          //                 // color: Colors.red,
-          //                 child: ComInputText(
-          //                   isContr: undercontroltap1,
-          //                   fnContr: (input) {
-          //                     undercontroltap1 = input;
-          //                   },
-          //                   sValue: EditDataTable1.field05,
-          //                   returnfunc: (String s) {
-          //                     EditDataTable1buffer.field05 = s;
-          //                   },
-          //                 ),
-          //               ),
-          //               Container(
-          //                 width: 400,
-          //                 height: 40,
-          //                 // color: Colors.red,
-          //                 child: ComInputText(
-          //                   isContr: undercontroltap1,
-          //                   fnContr: (input) {
-          //                     undercontroltap1 = input;
-          //                   },
-          //                   sValue: EditDataTable1.field06,
-          //                   returnfunc: (String s) {
-          //                     EditDataTable1buffer.field06 = s;
-          //                   },
-          //                 ),
-          //               ),
-          //             ],
-          //           ),
-          //           SizedBox(
-          //             height: 10,
-          //           ),
-          //           Align(
-          //             alignment: Alignment.bottomCenter,
-          //             child: Container(
-          //               width: 460,
-          //               height: 40,
-          //               // color: Colors.blue,
-          //               child: Row(
-          //                 mainAxisAlignment: MainAxisAlignment.center,
-          //                 children: [
-          //                   ComBtnBlack(
-          //                       sLabel: "Save",
-          //                       func: () {
-          //                         // print(EditDataTable1buffer.field04);
-          //                         // EditDataTable1buffer = EditDataTable1;
-          //                         context.read<FetchDataTable1Bloc>().add(
-          //                             DataSequncePage1
-          //                                 .update); //<------------------
-          //                       },
-          //                       nWidth: 80),
-          //                   SizedBox(
-          //                     width: 10,
-          //                   ),
-          //                   ComBtnBlackBorder(
-          //                       sLabel: "Cancle",
-          //                       cBg: Colors.red,
-          //                       func: () {
-          //                         undercontroltap1 = true;
-          //                         EditDataTable1 = MainStrucTableTap1(
-          //                             number: "",
-          //                             field01: "",
-          //                             field02: "",
-          //                             field03: "",
-          //                             field04: "",
-          //                             field05: "",
-          //                             field06: "",
-          //                             field07: "",
-          //                             field08: "",
-          //                             field09: "",
-          //                             field10: "");
-          //                         EditDataTable1buffer = MainStrucTableTap1(
-          //                             number: "",
-          //                             field01: "",
-          //                             field02: "",
-          //                             field03: "",
-          //                             field04: "",
-          //                             field05: "",
-          //                             field06: "",
-          //                             field07: "",
-          //                             field08: "",
-          //                             field09: "",
-          //                             field10: "");
-          //                         BlocProvider.of<BlocPageRebuild>(context)
-          //                             .rebuildPage();
-          //                       },
-          //                       nWidth: 80),
-          //                   SizedBox(
-          //                     width: 10,
-          //                   ),
-          //                   ComBtnBlackBorder(
-          //                       sLabel: "New",
-          //                       func: () {
-          //                         context
-          //                             .read<FetchDataTable1Bloc>()
-          //                             .add(DataSequncePage1.insert);
-          //                       },
-          //                       nWidth: 80),
-          //                 ],
-          //               ),
-          //             ),
-          //           ),
-          //         ],
-          //       ),
-          //     ),
-          //   ),
-          // )
         ],
       )),
     );

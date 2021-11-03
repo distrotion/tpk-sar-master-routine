@@ -10,6 +10,7 @@ import 'package:pick_edit_datatable/bloc/datasequnce/datasequnce_event.dart';
 import 'package:pick_edit_datatable/style/style.dart';
 import 'package:pick_edit_datatable/tabletap/tabletap2/datatap2/datatap2.dart';
 import 'package:pick_edit_datatable/tabletap/tabletap2/tablestruc2.dart';
+import 'package:pick_edit_datatable/widget/Advancedropdown.dart';
 import 'package:pick_edit_datatable/widget/ComBtnBlack.dart';
 import 'package:pick_edit_datatable/widget/ComBtnBlackBorder.dart';
 import 'package:pick_edit_datatable/widget/ComBtnImage.dart';
@@ -218,11 +219,21 @@ class _DataListTable2State extends State<DataListTable2> {
       EditDataTable2_MR = s;
       EditDataTable2buffer_MR = s;
       undercontroltap2_MR = true;
-      // Branch_MR = s.field04;
-      // Code_MR = s.field05;
+
+      CustFull2_MR = s.field02;
+
+      SampleGroup2_MR = s.field06;
+      SampleType2_MR = s.field07;
+      SampleTank2_MR = s.field08;
+      SampleName2_MR = s.field09;
+      Frequency2_MR = s.field10;
+      Instrument2_MR = s.field12;
+      ItemName2_MR = s.field13;
+      Position2_MR = s.field14;
+      Temp2_MR = s.field16;
 
       context.read<FetchDataTable2Bloc_MR>().add(DataSequncePage2_MR.select);
-      _ConsoleBox(s, context, zeroDropDownData);
+      _ConsoleBox(s, context, zeroDropDownData_MR);
     }
 
     void _CallYNPopup(
@@ -363,7 +374,7 @@ class _DataListTable2State extends State<DataListTable2> {
                       // JP = '';
                       // DMG = '';
                       BlocProvider.of<BlocPageRebuild>(context).rebuildPage();
-                      _ConsoleBox(Zerodata, context, zeroDropDownData);
+                      _ConsoleBox(Zerodata, context, zeroDropDownData_MR);
                     },
                     nWidth: 134),
               ),
@@ -665,7 +676,7 @@ DataCell _getDataCell_Icon(
 }
 
 void _ConsoleBox(MainStrucTableTap2_MR input, BuildContext contextinput,
-    DropDownData dropdowndata) {
+    DropDownData_MR dropdowndata) {
   showDialog(
     context: contextinput,
     barrierDismissible: true,
@@ -673,6 +684,20 @@ void _ConsoleBox(MainStrucTableTap2_MR input, BuildContext contextinput,
       // DropDownData _datadropdown = dropdowndata;
       // EditDataTable2_MR.field04 = Branch_MR;
       // EditDataTable2_MR.field05 = Code_MR;
+
+      DropDownData_MR _datadropdown = dropdowndata;
+
+      List<String> _list1 = _datadropdown.list01;
+      List<String> _list2 = _datadropdown.list02;
+      List<String> _list3 = _datadropdown.list03;
+      List<String> _list4 = _datadropdown.list04;
+      List<String> _list5 = _datadropdown.list05;
+      List<String> _list6 = _datadropdown.list06;
+      List<String> _list7 = _datadropdown.list07;
+      List<String> _list8 = _datadropdown.list08;
+      List<String> _list9 = _datadropdown.list09;
+      List<String> _list10 = _datadropdown.list10;
+
       return Dialog(
         child: SingleChildScrollView(
           scrollDirection: Axis.horizontal,
@@ -712,7 +737,7 @@ void _ConsoleBox(MainStrucTableTap2_MR input, BuildContext contextinput,
                             height: 15,
                             child: Align(
                                 alignment: Alignment.centerLeft,
-                                child: Text("Id")),
+                                child: Text("NO")),
                           ),
                           Container(
                             width: 400,
@@ -740,6 +765,7 @@ void _ConsoleBox(MainStrucTableTap2_MR input, BuildContext contextinput,
                             height: 40,
                             // color: Colors.red,
                             child: ComInputText(
+                                isEnabled: false,
                                 isContr: undercontroltap2_MR,
                                 fnContr: (input) {
                                   undercontroltap2_MR = input;
@@ -756,20 +782,24 @@ void _ConsoleBox(MainStrucTableTap2_MR input, BuildContext contextinput,
                                 alignment: Alignment.centerLeft,
                                 child: Text("CustFull")),
                           ),
-                          Container(
+                          AdvanceDropDown(
                             width: 400,
                             height: 40,
-                            // color: Colors.red,
-                            child: ComInputText(
-                              isContr: undercontroltap2_MR,
-                              fnContr: (input) {
-                                undercontroltap2_MR = input;
-                              },
-                              sValue: EditDataTable2_MR.field02,
-                              returnfunc: (String s) {
-                                EditDataTable2buffer_MR.field02 = s;
-                              },
-                            ),
+                            value: CustFull2_MR,
+                            onChangeinside: (newValue) {
+                              CustFull2_MR = newValue!;
+                              EditDataTable2buffer_MR.field02 = newValue;
+                              undercontroltap2_MR = true;
+                              _onLoading(
+                                  contextinput,
+                                  contextinput
+                                      .read<CallDropdowndata_MR>()
+                                      .add(calldropdownrequrst_MR.set02_1));
+
+                              BlocProvider.of<BlocPageRebuild>(contextinput)
+                                  .rebuildPage();
+                            },
+                            listdropdown: _list1,
                           ),
                           SizedBox(
                             width: 400,
@@ -783,6 +813,7 @@ void _ConsoleBox(MainStrucTableTap2_MR input, BuildContext contextinput,
                             height: 40,
                             // color: Colors.red,
                             child: ComInputText(
+                              isEnabled: false,
                               isContr: undercontroltap2_MR,
                               fnContr: (input) {
                                 undercontroltap2_MR = input;
@@ -844,20 +875,17 @@ void _ConsoleBox(MainStrucTableTap2_MR input, BuildContext contextinput,
                                 alignment: Alignment.centerLeft,
                                 child: Text("SampleType")),
                           ),
-                          Container(
+                          AdvanceDropDown(
                             width: 400,
                             height: 40,
-                            // color: Colors.red,
-                            child: ComInputText(
-                              isContr: undercontroltap2_MR,
-                              fnContr: (input) {
-                                undercontroltap2_MR = input;
-                              },
-                              sValue: EditDataTable2_MR.field06,
-                              returnfunc: (String s) {
-                                EditDataTable2buffer_MR.field06 = s;
-                              },
-                            ),
+                            value: SampleGroup2_MR,
+                            onChangeinside: (newValue) {
+                              SampleGroup2_MR = newValue!;
+                              EditDataTable2buffer_MR.field06 = newValue;
+                              BlocProvider.of<BlocPageRebuild>(contextinput)
+                                  .rebuildPage();
+                            },
+                            listdropdown: _list2,
                           ),
                         ],
                       ),
@@ -878,20 +906,17 @@ void _ConsoleBox(MainStrucTableTap2_MR input, BuildContext contextinput,
                                 alignment: Alignment.centerLeft,
                                 child: Text("SampleTank")),
                           ),
-                          Container(
+                          AdvanceDropDown(
                             width: 400,
                             height: 40,
-                            // color: Colors.red,
-                            child: ComInputText(
-                              isContr: undercontroltap2_MR,
-                              fnContr: (input) {
-                                undercontroltap2_MR = input;
-                              },
-                              sValue: EditDataTable2_MR.field07,
-                              returnfunc: (String s) {
-                                EditDataTable2buffer_MR.field07 = s;
-                              },
-                            ),
+                            value: SampleType2_MR,
+                            onChangeinside: (newValue) {
+                              SampleType2_MR = newValue!;
+                              EditDataTable2buffer_MR.field07 = newValue;
+                              BlocProvider.of<BlocPageRebuild>(contextinput)
+                                  .rebuildPage();
+                            },
+                            listdropdown: _list3,
                           ),
                           SizedBox(
                             width: 400,
@@ -900,19 +925,17 @@ void _ConsoleBox(MainStrucTableTap2_MR input, BuildContext contextinput,
                                 alignment: Alignment.centerLeft,
                                 child: Text("SampleName")),
                           ),
-                          Container(
+                          AdvanceDropDown(
                             width: 400,
                             height: 40,
-                            // color: Colors.red,
-                            child: ComInputText(
-                                isContr: undercontroltap2_MR,
-                                fnContr: (input) {
-                                  undercontroltap2_MR = input;
-                                },
-                                sValue: EditDataTable2_MR.field08,
-                                returnfunc: (String s) {
-                                  EditDataTable2buffer_MR.field08 = s;
-                                }),
+                            value: SampleTank2_MR,
+                            onChangeinside: (newValue) {
+                              SampleTank2_MR = newValue!;
+                              EditDataTable2buffer_MR.field08 = newValue;
+                              BlocProvider.of<BlocPageRebuild>(contextinput)
+                                  .rebuildPage();
+                            },
+                            listdropdown: _list4,
                           ),
                           SizedBox(
                             width: 400,
@@ -921,20 +944,17 @@ void _ConsoleBox(MainStrucTableTap2_MR input, BuildContext contextinput,
                                 alignment: Alignment.centerLeft,
                                 child: Text("Frequency")),
                           ),
-                          Container(
+                          AdvanceDropDown(
                             width: 400,
                             height: 40,
-                            // color: Colors.red,
-                            child: ComInputText(
-                              isContr: undercontroltap2_MR,
-                              fnContr: (input) {
-                                undercontroltap2_MR = input;
-                              },
-                              sValue: EditDataTable2_MR.field09,
-                              returnfunc: (String s) {
-                                EditDataTable2buffer_MR.field09 = s;
-                              },
-                            ),
+                            value: SampleName2_MR,
+                            onChangeinside: (newValue) {
+                              SampleName2_MR = newValue!;
+                              EditDataTable2buffer_MR.field09 = newValue;
+                              BlocProvider.of<BlocPageRebuild>(contextinput)
+                                  .rebuildPage();
+                            },
+                            listdropdown: _list5,
                           ),
                           SizedBox(
                             width: 400,
@@ -943,20 +963,17 @@ void _ConsoleBox(MainStrucTableTap2_MR input, BuildContext contextinput,
                                 alignment: Alignment.centerLeft,
                                 child: Text("ItemNo")),
                           ),
-                          Container(
+                          AdvanceDropDown(
                             width: 400,
                             height: 40,
-                            // color: Colors.red,
-                            child: ComInputText(
-                              isContr: undercontroltap2_MR,
-                              fnContr: (input) {
-                                undercontroltap2_MR = input;
-                              },
-                              sValue: EditDataTable2_MR.field10,
-                              returnfunc: (String s) {
-                                EditDataTable2buffer_MR.field10 = s;
-                              },
-                            ),
+                            value: Frequency2_MR,
+                            onChangeinside: (newValue) {
+                              Frequency2_MR = newValue!;
+                              EditDataTable2buffer_MR.field10 = newValue;
+                              BlocProvider.of<BlocPageRebuild>(contextinput)
+                                  .rebuildPage();
+                            },
+                            listdropdown: _list6,
                           ),
                           SizedBox(
                             width: 400,
@@ -987,20 +1004,17 @@ void _ConsoleBox(MainStrucTableTap2_MR input, BuildContext contextinput,
                                 alignment: Alignment.centerLeft,
                                 child: Text("ItemName")),
                           ),
-                          Container(
+                          AdvanceDropDown(
                             width: 400,
                             height: 40,
-                            // color: Colors.red,
-                            child: ComInputText(
-                              isContr: undercontroltap2_MR,
-                              fnContr: (input) {
-                                undercontroltap2_MR = input;
-                              },
-                              sValue: EditDataTable2_MR.field12,
-                              returnfunc: (String s) {
-                                EditDataTable2buffer_MR.field12 = s;
-                              },
-                            ),
+                            value: Instrument2_MR,
+                            onChangeinside: (newValue) {
+                              Instrument2_MR = newValue!;
+                              EditDataTable2buffer_MR.field12 = newValue;
+                              BlocProvider.of<BlocPageRebuild>(contextinput)
+                                  .rebuildPage();
+                            },
+                            listdropdown: _list7,
                           ),
                           SizedBox(
                             width: 400,
@@ -1009,20 +1023,17 @@ void _ConsoleBox(MainStrucTableTap2_MR input, BuildContext contextinput,
                                 alignment: Alignment.centerLeft,
                                 child: Text("Position")),
                           ),
-                          Container(
+                          AdvanceDropDown(
                             width: 400,
                             height: 40,
-                            // color: Colors.red,
-                            child: ComInputText(
-                              isContr: undercontroltap2_MR,
-                              fnContr: (input) {
-                                undercontroltap2_MR = input;
-                              },
-                              sValue: EditDataTable2_MR.field13,
-                              returnfunc: (String s) {
-                                EditDataTable2buffer_MR.field13 = s;
-                              },
-                            ),
+                            value: ItemName2_MR,
+                            onChangeinside: (newValue) {
+                              ItemName2_MR = newValue!;
+                              EditDataTable2buffer_MR.field13 = newValue;
+                              BlocProvider.of<BlocPageRebuild>(contextinput)
+                                  .rebuildPage();
+                            },
+                            listdropdown: _list8,
                           ),
                         ],
                       ),
@@ -1043,20 +1054,17 @@ void _ConsoleBox(MainStrucTableTap2_MR input, BuildContext contextinput,
                                 alignment: Alignment.centerLeft,
                                 child: Text("Mag")),
                           ),
-                          Container(
+                          AdvanceDropDown(
                             width: 400,
                             height: 40,
-                            // color: Colors.red,
-                            child: ComInputText(
-                              isContr: undercontroltap2_MR,
-                              fnContr: (input) {
-                                undercontroltap2_MR = input;
-                              },
-                              sValue: EditDataTable2_MR.field14,
-                              returnfunc: (String s) {
-                                EditDataTable2buffer_MR.field14 = s;
-                              },
-                            ),
+                            value: Position2_MR,
+                            onChangeinside: (newValue) {
+                              Position2_MR = newValue!;
+                              EditDataTable2buffer_MR.field14 = newValue;
+                              BlocProvider.of<BlocPageRebuild>(contextinput)
+                                  .rebuildPage();
+                            },
+                            listdropdown: _list9,
                           ),
                           SizedBox(
                             width: 400,
@@ -1086,20 +1094,17 @@ void _ConsoleBox(MainStrucTableTap2_MR input, BuildContext contextinput,
                                 alignment: Alignment.centerLeft,
                                 child: Text("StdFactor")),
                           ),
-                          Container(
+                          AdvanceDropDown(
                             width: 400,
                             height: 40,
-                            // color: Colors.red,
-                            child: ComInputText(
-                              isContr: undercontroltap2_MR,
-                              fnContr: (input) {
-                                undercontroltap2_MR = input;
-                              },
-                              sValue: EditDataTable2_MR.field16,
-                              returnfunc: (String s) {
-                                EditDataTable2buffer_MR.field16 = s;
-                              },
-                            ),
+                            value: Temp2_MR,
+                            onChangeinside: (newValue) {
+                              Temp2_MR = newValue!;
+                              EditDataTable2buffer_MR.field16 = newValue;
+                              BlocProvider.of<BlocPageRebuild>(contextinput)
+                                  .rebuildPage();
+                            },
+                            listdropdown: _list10,
                           ),
                           SizedBox(
                             width: 400,

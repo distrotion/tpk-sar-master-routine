@@ -16,8 +16,8 @@ import 'datasequnce_event.dart';
 import 'datatest.dart';
 //----------------------------------------------------------------
 
-// String server = "http://172.20.30.46:9200/";
-String server = "http://127.0.0.1:9200/";
+String server = "http://172.20.30.46:9200/";
+// String server = "http://127.0.0.1:9200/";
 
 //------------------------------------------------------- First
 
@@ -62,15 +62,15 @@ Stream<List<MainStrucTableTap1_MR>> selectData_fn_MR(
       number: data_input[i]['Id'].toString(),
       field01: data_input[i]['CustId'].toString(),
       field02: data_input[i]['CustFull'].toString(),
-      field03: data_input[i]['Branch'].toString(),
-      field04: data_input[i]['Code'].toString(),
-      field05: data_input[i]['FrequencyRequest'].toString(),
-      field06: data_input[i]['Incharge'].toString(),
-      field07: data_input[i]['SubLeader'].toString(),
-      field08: data_input[i]['GL'].toString(),
-      field09: data_input[i]['JP'].toString(),
-      field10: data_input[i]['DMG'].toString(),
-      field11: "",
+      field03: data_input[i]['CustShort'].toString(),
+      field04: data_input[i]['Branch'].toString(),
+      field05: data_input[i]['Code'].toString(),
+      field06: data_input[i]['FrequencyRequest'].toString(),
+      field07: data_input[i]['Incharge'].toString(),
+      field08: data_input[i]['SubLeader'].toString(),
+      field09: data_input[i]['GL'].toString(),
+      field10: data_input[i]['JP'].toString(),
+      field11: data_input[i]['DMG'].toString(),
       field12: "",
       field13: "",
       field14: "",
@@ -95,14 +95,15 @@ Stream<List<MainStrucTableTap1_MR>> updateData_fn_MR(
     "Id": EditDataTable1buffer_MR.number,
     "CustId": EditDataTable1buffer_MR.field01,
     "CustFull": EditDataTable1buffer_MR.field02,
-    "Branch": EditDataTable1buffer_MR.field03,
-    "Code": EditDataTable1buffer_MR.field04,
-    "FrequencyRequest": EditDataTable1buffer_MR.field05,
-    "Incharge": EditDataTable1buffer_MR.field06,
-    "SubLeader": EditDataTable1buffer_MR.field07,
-    "GL": EditDataTable1buffer_MR.field08,
-    "JP": EditDataTable1buffer_MR.field09,
-    "DMG": EditDataTable1buffer_MR.field10,
+    "CustShort": EditDataTable1buffer_MR.field03,
+    "Branch": EditDataTable1buffer_MR.field04,
+    "Code": EditDataTable1buffer_MR.field05,
+    "FrequencyRequest": EditDataTable1buffer_MR.field06,
+    "Incharge": EditDataTable1buffer_MR.field07,
+    "SubLeader": EditDataTable1buffer_MR.field08,
+    "GL": EditDataTable1buffer_MR.field09,
+    "JP": EditDataTable1buffer_MR.field10,
+    "DMG": EditDataTable1buffer_MR.field11,
   };
 
   final response_init = await http.post(
@@ -129,15 +130,15 @@ Stream<List<MainStrucTableTap1_MR>> updateData_fn_MR(
       number: data_input[i]['Id'].toString(),
       field01: data_input[i]['CustId'].toString(),
       field02: data_input[i]['CustFull'].toString(),
-      field03: data_input[i]['Branch'].toString(),
-      field04: data_input[i]['Code'].toString(),
-      field05: data_input[i]['FrequencyRequest'].toString(),
-      field06: data_input[i]['Incharge'].toString(),
-      field07: data_input[i]['SubLeader'].toString(),
-      field08: data_input[i]['GL'].toString(),
-      field09: data_input[i]['JP'].toString(),
-      field10: data_input[i]['DMG'].toString(),
-      field11: "",
+      field03: data_input[i]['CustShort'].toString(),
+      field04: data_input[i]['Branch'].toString(),
+      field05: data_input[i]['Code'].toString(),
+      field06: data_input[i]['FrequencyRequest'].toString(),
+      field07: data_input[i]['Incharge'].toString(),
+      field08: data_input[i]['SubLeader'].toString(),
+      field09: data_input[i]['GL'].toString(),
+      field10: data_input[i]['JP'].toString(),
+      field11: data_input[i]['DMG'].toString(),
       field12: "",
       field13: "",
       field14: "",
@@ -162,14 +163,15 @@ Stream<List<MainStrucTableTap1_MR>> deleteData_fn_MR(
     "Id": EditDataTable1buffer_MR.number,
     "CustId": EditDataTable1buffer_MR.field01,
     "CustFull": EditDataTable1buffer_MR.field02,
-    "Branch": EditDataTable1buffer_MR.field03,
-    "Code": EditDataTable1buffer_MR.field04,
-    "FrequencyRequest": EditDataTable1buffer_MR.field05,
-    "Incharge": EditDataTable1buffer_MR.field06,
-    "SubLeader": EditDataTable1buffer_MR.field07,
-    "GL": EditDataTable1buffer_MR.field08,
-    "JP": EditDataTable1buffer_MR.field09,
-    "DMG": EditDataTable1buffer_MR.field10,
+    "CustShort": EditDataTable1buffer_MR.field03,
+    "Branch": EditDataTable1buffer_MR.field04,
+    "Code": EditDataTable1buffer_MR.field05,
+    "FrequencyRequest": EditDataTable1buffer_MR.field06,
+    "Incharge": EditDataTable1buffer_MR.field07,
+    "SubLeader": EditDataTable1buffer_MR.field08,
+    "GL": EditDataTable1buffer_MR.field09,
+    "JP": EditDataTable1buffer_MR.field10,
+    "DMG": EditDataTable1buffer_MR.field11,
   };
 
   final response_init = await http.post(
@@ -196,15 +198,15 @@ Stream<List<MainStrucTableTap1_MR>> deleteData_fn_MR(
       number: data_input[i]['Id'].toString(),
       field01: data_input[i]['CustId'].toString(),
       field02: data_input[i]['CustFull'].toString(),
-      field03: data_input[i]['Branch'].toString(),
-      field04: data_input[i]['Code'].toString(),
-      field05: data_input[i]['FrequencyRequest'].toString(),
-      field06: data_input[i]['Incharge'].toString(),
-      field07: data_input[i]['SubLeader'].toString(),
-      field08: data_input[i]['GL'].toString(),
-      field09: data_input[i]['JP'].toString(),
-      field10: data_input[i]['DMG'].toString(),
-      field11: "",
+      field03: data_input[i]['CustShort'].toString(),
+      field04: data_input[i]['Branch'].toString(),
+      field05: data_input[i]['Code'].toString(),
+      field06: data_input[i]['FrequencyRequest'].toString(),
+      field07: data_input[i]['Incharge'].toString(),
+      field08: data_input[i]['SubLeader'].toString(),
+      field09: data_input[i]['GL'].toString(),
+      field10: data_input[i]['JP'].toString(),
+      field11: data_input[i]['DMG'].toString(),
       field12: "",
       field13: "",
       field14: "",
@@ -229,14 +231,15 @@ Stream<List<MainStrucTableTap1_MR>> InsertData_fn_MR(
     "Id": EditDataTable1buffer_MR.number,
     "CustId": EditDataTable1buffer_MR.field01,
     "CustFull": EditDataTable1buffer_MR.field02,
-    "Branch": EditDataTable1buffer_MR.field03,
-    "Code": EditDataTable1buffer_MR.field04,
-    "FrequencyRequest": EditDataTable1buffer_MR.field05,
-    "Incharge": EditDataTable1buffer_MR.field06,
-    "SubLeader": EditDataTable1buffer_MR.field07,
-    "GL": EditDataTable1buffer_MR.field08,
-    "JP": EditDataTable1buffer_MR.field09,
-    "DMG": EditDataTable1buffer_MR.field10,
+    "CustShort": EditDataTable1buffer_MR.field03,
+    "Branch": EditDataTable1buffer_MR.field04,
+    "Code": EditDataTable1buffer_MR.field05,
+    "FrequencyRequest": EditDataTable1buffer_MR.field06,
+    "Incharge": EditDataTable1buffer_MR.field07,
+    "SubLeader": EditDataTable1buffer_MR.field08,
+    "GL": EditDataTable1buffer_MR.field09,
+    "JP": EditDataTable1buffer_MR.field10,
+    "DMG": EditDataTable1buffer_MR.field11,
   };
 
   final response_init = await http.post(
@@ -263,15 +266,15 @@ Stream<List<MainStrucTableTap1_MR>> InsertData_fn_MR(
       number: data_input[i]['Id'].toString(),
       field01: data_input[i]['CustId'].toString(),
       field02: data_input[i]['CustFull'].toString(),
-      field03: data_input[i]['Branch'].toString(),
-      field04: data_input[i]['Code'].toString(),
-      field05: data_input[i]['FrequencyRequest'].toString(),
-      field06: data_input[i]['Incharge'].toString(),
-      field07: data_input[i]['SubLeader'].toString(),
-      field08: data_input[i]['GL'].toString(),
-      field09: data_input[i]['JP'].toString(),
-      field10: data_input[i]['DMG'].toString(),
-      field11: "",
+      field03: data_input[i]['CustShort'].toString(),
+      field04: data_input[i]['Branch'].toString(),
+      field05: data_input[i]['Code'].toString(),
+      field06: data_input[i]['FrequencyRequest'].toString(),
+      field07: data_input[i]['Incharge'].toString(),
+      field08: data_input[i]['SubLeader'].toString(),
+      field09: data_input[i]['GL'].toString(),
+      field10: data_input[i]['JP'].toString(),
+      field11: data_input[i]['DMG'].toString(),
       field12: "",
       field13: "",
       field14: "",
@@ -865,7 +868,7 @@ Stream<List<MainStrucTableTap3_MR>> InsertData3_fn_MR(
 
 //------------------------------------------------------------------------------ dropdowndata
 
-class DropDownData {
+class DropDownData_MR {
   List<String> list01 = [""];
   List<String> list02 = [""];
   List<String> list03 = [""];
@@ -877,7 +880,7 @@ class DropDownData {
   List<String> list09 = [""];
   List<String> list10 = [""];
 
-  DropDownData({
+  DropDownData_MR({
     required this.list01,
     required this.list02,
     required this.list03,
@@ -891,7 +894,7 @@ class DropDownData {
   });
 }
 
-DropDownData zeroDropDownData = DropDownData(
+DropDownData_MR zeroDropDownData_MR = DropDownData_MR(
   list01: [],
   list02: [],
   list03: [],
@@ -904,22 +907,22 @@ DropDownData zeroDropDownData = DropDownData(
   list10: [],
 );
 
-class Dropdowndata extends Bloc<dropdownrequrst, DropDownData> {
-  Dropdowndata() : super(zeroDropDownData);
+class Dropdowndata_MR extends Bloc<dropdownrequrst_MR, DropDownData_MR> {
+  Dropdowndata_MR() : super(zeroDropDownData_MR);
 
   @override
-  Stream<DropDownData> mapEventToState(dropdownrequrst event) async* {
-    if (event == dropdownrequrst.set04) {
+  Stream<DropDownData_MR> mapEventToState(dropdownrequrst_MR event) async* {
+    if (event == dropdownrequrst_MR.set01) {
       yield* set_01_MR(state);
-    } else if (event == dropdownrequrst.set06) {
+    } else if (event == dropdownrequrst_MR.set02) {
       yield* set_02_MR(state);
-    } else if (event == dropdownrequrst.set07) {
+    } else if (event == dropdownrequrst_MR.set03) {
       yield* set_03_MR(state);
     }
   }
 }
 
-Stream<DropDownData> set_01_MR(DropDownData state) async* {
+Stream<DropDownData_MR> set_01_MR(DropDownData_MR state) async* {
   final response =
       await http.post(Uri.parse(server + "set_04"), body: {"Qurey": ""});
 
@@ -982,14 +985,6 @@ Stream<DropDownData> set_01_MR(DropDownData state) async* {
       state.list07.add(data_input['list07'][i].toString());
     }
 
-    // TB4data.tb401 = state.list01;
-    // TB4data.tb402 = state.list02;
-    // TB4data.tb403 = state.list03;
-    // TB4data.tb404 = state.list04;
-    // TB4data.tb405 = state.list05;
-    // TB4data.tb406 = state.list06;
-    // TB4data.tb407 = state.list07;
-
     state.list08 = [""];
     state.list09 = [""];
     state.list10 = [""];
@@ -1013,9 +1008,9 @@ Stream<DropDownData> set_01_MR(DropDownData state) async* {
   yield state;
 }
 
-Stream<DropDownData> set_02_MR(DropDownData state) async* {
+Stream<DropDownData_MR> set_02_MR(DropDownData_MR state) async* {
   final response =
-      await http.post(Uri.parse(server + "set_06"), body: {"Qurey": ""});
+      await http.post(Uri.parse(server + "set_02_MR"), body: {"Qurey": ""});
 
   var data_input;
   if (response.statusCode == 200) {
@@ -1042,16 +1037,33 @@ Stream<DropDownData> set_02_MR(DropDownData state) async* {
     for (var i = 0; i < data_input['list01'].length; i++) {
       state.list01.add(data_input['list01'][i].toString());
     }
-
-    state.list02 = [];
-    state.list03 = [];
-    state.list04 = [];
-    state.list05 = [];
-    state.list06 = [];
-    state.list07 = [];
-    state.list08 = [];
-    state.list09 = [];
-    state.list10 = [];
+    for (var i = 0; i < data_input['list02'].length; i++) {
+      state.list02.add(data_input['list02'][i].toString());
+    }
+    for (var i = 0; i < data_input['list03'].length; i++) {
+      state.list03.add(data_input['list03'][i].toString());
+    }
+    for (var i = 0; i < data_input['list04'].length; i++) {
+      state.list04.add(data_input['list04'][i].toString());
+    }
+    for (var i = 0; i < data_input['list05'].length; i++) {
+      state.list05.add(data_input['list05'][i].toString());
+    }
+    for (var i = 0; i < data_input['list06'].length; i++) {
+      state.list06.add(data_input['list06'][i].toString());
+    }
+    for (var i = 0; i < data_input['list07'].length; i++) {
+      state.list07.add(data_input['list07'][i].toString());
+    }
+    for (var i = 0; i < data_input['list08'].length; i++) {
+      state.list08.add(data_input['list08'][i].toString());
+    }
+    for (var i = 0; i < data_input['list09'].length; i++) {
+      state.list09.add(data_input['list09'][i].toString());
+    }
+    for (var i = 0; i < data_input['list10'].length; i++) {
+      state.list10.add(data_input['list10'][i].toString());
+    }
   } else {
     state.list01 = [];
     state.list02 = [];
@@ -1067,9 +1079,9 @@ Stream<DropDownData> set_02_MR(DropDownData state) async* {
   yield state;
 }
 
-Stream<DropDownData> set_03_MR(DropDownData state) async* {
+Stream<DropDownData_MR> set_03_MR(DropDownData_MR state) async* {
   final response =
-      await http.post(Uri.parse(server + "set_07"), body: {"Qurey": ""});
+      await http.post(Uri.parse(server + "set_03_MR"), body: {"Qurey": ""});
   var data_input;
   if (response.statusCode == 200) {
     var databuff = jsonDecode(response.body);
@@ -1093,23 +1105,35 @@ Stream<DropDownData> set_03_MR(DropDownData state) async* {
     state.list10.clear();
 
     for (var i = 0; i < data_input['list01'].length; i++) {
-      state.list01.add(data_input['list01'][i]);
+      state.list01.add(data_input['list01'][i].toString());
     }
-
     for (var i = 0; i < data_input['list02'].length; i++) {
-      state.list02.add(data_input['list02'][i]);
+      state.list02.add(data_input['list02'][i].toString());
     }
-
     for (var i = 0; i < data_input['list03'].length; i++) {
-      state.list03.add(data_input['list03'][i]);
+      state.list03.add(data_input['list03'][i].toString());
     }
-    state.list04 = [];
-    state.list05 = [];
-    state.list06 = [];
-    state.list07 = [];
-    state.list08 = [];
-    state.list09 = [];
-    state.list10 = [];
+    for (var i = 0; i < data_input['list04'].length; i++) {
+      state.list04.add(data_input['list04'][i].toString());
+    }
+    for (var i = 0; i < data_input['list05'].length; i++) {
+      state.list05.add(data_input['list05'][i].toString());
+    }
+    for (var i = 0; i < data_input['list06'].length; i++) {
+      state.list06.add(data_input['list06'][i].toString());
+    }
+    for (var i = 0; i < data_input['list07'].length; i++) {
+      state.list07.add(data_input['list07'][i].toString());
+    }
+    for (var i = 0; i < data_input['list08'].length; i++) {
+      state.list08.add(data_input['list08'][i].toString());
+    }
+    for (var i = 0; i < data_input['list09'].length; i++) {
+      state.list09.add(data_input['list09'][i].toString());
+    }
+    for (var i = 0; i < data_input['list10'].length; i++) {
+      state.list10.add(data_input['list10'][i].toString());
+    }
   } else {
     state.list01 = [];
     state.list02 = [];
@@ -1127,7 +1151,7 @@ Stream<DropDownData> set_03_MR(DropDownData state) async* {
 
 //--------------------------------
 
-class CallDropDownDataS {
+class CallDropDownDataS_MR {
   String data01 = '';
   String data02 = '';
   String data03 = '';
@@ -1139,7 +1163,7 @@ class CallDropDownDataS {
   String data09 = '';
   String data10 = '';
 
-  CallDropDownDataS({
+  CallDropDownDataS_MR({
     required this.data01,
     required this.data02,
     required this.data03,
@@ -1153,7 +1177,7 @@ class CallDropDownDataS {
   });
 }
 
-CallDropDownDataS ZeCallDropdowndata = CallDropDownDataS(
+CallDropDownDataS_MR ZeCallDropdowndata_MR = CallDropDownDataS_MR(
     data01: '',
     data02: '',
     data03: '',
@@ -1165,37 +1189,39 @@ CallDropDownDataS ZeCallDropdowndata = CallDropDownDataS(
     data09: '',
     data10: '');
 
-class CallDropdowndata extends Bloc<calldropdownrequrst, CallDropDownDataS> {
-  CallDropdowndata() : super(ZeCallDropdowndata);
+class CallDropdowndata_MR
+    extends Bloc<calldropdownrequrst_MR, CallDropDownDataS_MR> {
+  CallDropdowndata_MR() : super(ZeCallDropdowndata_MR);
 
   @override
-  Stream<CallDropDownDataS> mapEventToState(calldropdownrequrst event) async* {
-    if (event == calldropdownrequrst.set04_1) {
+  Stream<CallDropDownDataS_MR> mapEventToState(
+      calldropdownrequrst_MR event) async* {
+    if (event == calldropdownrequrst_MR.set01_1) {
       yield* set_01_1_MR(state);
-    } else if (event == calldropdownrequrst.set06_1) {
+    } else if (event == calldropdownrequrst_MR.set02_1) {
       yield* set_02_1_MR(state);
-    } else if (event == calldropdownrequrst.set07_1) {
+    } else if (event == calldropdownrequrst_MR.set03_1) {
       yield* set_03_1_MR(state);
     }
   }
 }
 
-Stream<CallDropDownDataS> set_01_1_MR(CallDropDownDataS state) async* {
-  final response =
-      await http.post(Uri.parse(server + "set_04_1call"), body: {"Qurey": ''});
+Stream<CallDropDownDataS_MR> set_01_1_MR(CallDropDownDataS_MR state) async* {
+  final response = await http.post(Uri.parse(server + "set_01_1_MRcall"),
+      body: {"Qurey": EditDataTable1_MR.field02});
   var data_input;
   if (response.statusCode == 200) {
     var databuff = jsonDecode(response.body);
     data_input = databuff[0]['output'];
     print(data_input);
-    // EditDataTable4.field01 = data_input['data01'];
-    // EditDataTable4.field03 = data_input['data02'];
-    // EditDataTable4.field04 = data_input['data03'];
-    // EditDataTable4.field05 = data_input['data04'];
-    // EditDataTable4buffer.field01 = data_input['data01'];
-    // EditDataTable4buffer.field03 = data_input['data02'];
-    // EditDataTable4buffer.field04 = data_input['data03'];
-    // EditDataTable4buffer.field05 = data_input['data04'];
+    EditDataTable1_MR.field01 = data_input['data02'];
+    EditDataTable1_MR.field03 = data_input['data04'];
+    EditDataTable1_MR.field04 = data_input['data05'];
+    EditDataTable1_MR.field05 = data_input['data06'];
+    EditDataTable1buffer_MR.field01 = data_input['data02'];
+    EditDataTable1buffer_MR.field03 = data_input['data04'];
+    EditDataTable1buffer_MR.field04 = data_input['data05'];
+    EditDataTable1buffer_MR.field05 = data_input['data06'];
   } else {
     data_input = '';
     print("where is my server");
@@ -1204,16 +1230,21 @@ Stream<CallDropDownDataS> set_01_1_MR(CallDropDownDataS state) async* {
   yield state;
 }
 
-Stream<CallDropDownDataS> set_02_1_MR(CallDropDownDataS state) async* {
-  final response =
-      await http.post(Uri.parse(server + "set_06_1call"), body: {"Qurey": ''});
+Stream<CallDropDownDataS_MR> set_02_1_MR(CallDropDownDataS_MR state) async* {
+  final response = await http.post(Uri.parse(server + "set_02_1_MRcall"),
+      body: {"Qurey": EditDataTable2_MR.field02});
   var data_input;
   if (response.statusCode == 200) {
     var databuff = jsonDecode(response.body);
     data_input = databuff[0]['output'];
     print(data_input);
-    // EditDataTable6.field01 = data_input['data02'];
-    // EditDataTable6buffer.field01 = data_input['data02'];
+    EditDataTable2_MR.field01 = data_input['data02'];
+    EditDataTable2_MR.field03 = data_input['data04'];
+    EditDataTable2_MR.field04 = data_input['data07'];
+
+    EditDataTable2buffer_MR.field01 = data_input['data02'];
+    EditDataTable2buffer_MR.field03 = data_input['data04'];
+    EditDataTable2buffer_MR.field04 = data_input['data07'];
   } else {
     data_input = '';
     print("where is my server");
@@ -1222,16 +1253,21 @@ Stream<CallDropDownDataS> set_02_1_MR(CallDropDownDataS state) async* {
   yield state;
 }
 
-Stream<CallDropDownDataS> set_03_1_MR(CallDropDownDataS state) async* {
-  final response =
-      await http.post(Uri.parse(server + "set_07_1call"), body: {"Qurey": ''});
+Stream<CallDropDownDataS_MR> set_03_1_MR(CallDropDownDataS_MR state) async* {
+  final response = await http.post(Uri.parse(server + "set_03_1_MRcall"),
+      body: {"Qurey": EditDataTable3_MR.field02});
   var data_input;
   if (response.statusCode == 200) {
     var databuff = jsonDecode(response.body);
     data_input = databuff[0]['output'];
     print(data_input);
-    // EditDataTable7.field01 = data_input['data02'];
-    // EditDataTable7buffer.field01 = data_input['data02'];
+    EditDataTable3_MR.field01 = data_input['data02'];
+    EditDataTable3_MR.field03 = data_input['data04'];
+    EditDataTable3_MR.field04 = data_input['data07'];
+
+    EditDataTable3buffer_MR.field01 = data_input['data02'];
+    EditDataTable3buffer_MR.field03 = data_input['data04'];
+    EditDataTable3_MR.field04 = data_input['data07'];
   } else {
     data_input = '';
     print("where is my server");

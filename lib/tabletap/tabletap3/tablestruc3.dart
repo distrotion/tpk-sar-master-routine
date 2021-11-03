@@ -33,8 +33,8 @@ class _TableStrucBuffer extends StatelessWidget {
       create: (_) => FetchDataTable3Bloc_MR(),
       child: BlocBuilder<FetchDataTable3Bloc_MR, List<MainStrucTableTap3_MR>>(
         builder: (_, State) {
-          return _TableStrucMain3(
-            datainput: State,
+          return _TableStrucBuffer2(
+            State: State,
           );
         },
       ),
@@ -42,10 +42,50 @@ class _TableStrucBuffer extends StatelessWidget {
   }
 }
 
+class _TableStrucBuffer2 extends StatelessWidget {
+  _TableStrucBuffer2({Key? key, required this.State}) : super(key: key);
+  final List<MainStrucTableTap3_MR> State;
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocProvider(
+      create: (_) => Dropdowndata_MR(),
+      child: BlocBuilder<Dropdowndata_MR, DropDownData_MR>(
+        builder: (_, Statedrop) {
+          return _TableStrucBufferCalldrop(
+              State: State, datadropdown: Statedrop);
+        },
+      ),
+    );
+  }
+}
+
+class _TableStrucBufferCalldrop extends StatelessWidget {
+  _TableStrucBufferCalldrop(
+      {Key? key, required this.State, required this.datadropdown})
+      : super(key: key);
+  final List<MainStrucTableTap3_MR> State;
+  final DropDownData_MR datadropdown;
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocProvider(
+      create: (_) => CallDropdowndata_MR(),
+      child: BlocBuilder<CallDropdowndata_MR, CallDropDownDataS_MR>(
+        builder: (_, State2) {
+          return _TableStrucMain3(datainput: State, datadropdown: datadropdown);
+        },
+      ),
+    );
+  }
+}
+
 class _TableStrucMain3 extends StatefulWidget {
-  const _TableStrucMain3({Key? key, this.datainput}) : super(key: key);
+  _TableStrucMain3({Key? key, this.datainput, required this.datadropdown})
+      : super(key: key);
 
   final List<MainStrucTableTap3_MR>? datainput;
+  DropDownData_MR datadropdown;
 
   @override
   __TableStrucMain3State createState() => __TableStrucMain3State();
@@ -56,6 +96,7 @@ class __TableStrucMain3State extends State<_TableStrucMain3> {
   void initState() {
     super.initState();
     context.read<FetchDataTable3Bloc_MR>().add(DataSequncePage3_MR.select);
+    context.read<Dropdowndata_MR>().add(dropdownrequrst_MR.set03);
   }
 
   @override
@@ -67,6 +108,18 @@ class __TableStrucMain3State extends State<_TableStrucMain3> {
         TableTap3nPage_MR = n;
       });
     }
+
+    EditDataTable3_MR.field02 = CustFull3_MR;
+
+    EditDataTable3_MR.field06 = SampleGroup3_MR;
+    EditDataTable3_MR.field07 = SampleType3_MR;
+    EditDataTable3_MR.field08 = SampleTank3_MR;
+    EditDataTable3_MR.field09 = SampleName3_MR;
+    EditDataTable3_MR.field10 = Frequency3_MR;
+    EditDataTable3_MR.field12 = Instrument3_MR;
+    EditDataTable3_MR.field13 = ItemName3_MR;
+    EditDataTable3_MR.field14 = Position3_MR;
+    EditDataTable3_MR.field16 = Temp3_MR;
 
     return ScrollConfiguration(
       behavior: ScrollConfiguration.of(context).copyWith(

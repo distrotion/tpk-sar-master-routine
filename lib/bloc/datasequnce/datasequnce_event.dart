@@ -82,24 +82,14 @@ enum DataSequncePage12 {
   insert,
 }
 
-enum dropdownrequrst {
-  set04,
-  set06,
-  set07,
-  set10,
-  set11,
-  set12,
+enum dropdownrequrst_MR {
+  set01,
+  set02,
+  set03,
 }
 
-enum calldropdownrequrst {
-  set04_1,
-  set06_1,
-  set07_1,
-  set07_2,
-  set10_1,
-  set11_1,
-  set12_1,
-  set12_2,
-  set12_3,
-  set12_4,
+enum calldropdownrequrst_MR {
+  set01_1,
+  set02_1,
+  set03_1,
 }

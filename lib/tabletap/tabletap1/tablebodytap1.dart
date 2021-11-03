@@ -7,6 +7,7 @@ import 'package:pick_edit_datatable/bloc/BlocPageRebuild.dart';
 import 'package:pick_edit_datatable/bloc/datasequnce/datasequnce_bloc.dart';
 import 'package:pick_edit_datatable/bloc/datasequnce/datasequnce_event.dart';
 import 'package:pick_edit_datatable/style/style.dart';
+import 'package:pick_edit_datatable/widget/Advancedropdown.dart';
 import 'package:pick_edit_datatable/widget/ComBtnBlack.dart';
 import 'package:pick_edit_datatable/widget/ComBtnBlackBorder.dart';
 import 'package:pick_edit_datatable/widget/ComBtnImage.dart';
@@ -19,8 +20,10 @@ import 'modelintable.dart';
 int ListTable1Status_MR = 0;
 
 class DataListTable extends StatefulWidget {
-  const DataListTable({Key? key, required this.datainput}) : super(key: key);
+  DataListTable({Key? key, required this.datainput, required this.dropdowndata})
+      : super(key: key);
   final List<MainStrucTableTap1_MR> datainput;
+  DropDownData_MR dropdowndata;
   @override
   _DataListTableState createState() => _DataListTableState();
 }
@@ -214,9 +217,17 @@ class _DataListTableState extends State<DataListTable> {
       ListTable1Status_MR = 1;
       EditDataTable1_MR = s;
       EditDataTable1buffer_MR = s;
+      undercontroltap1_MR = true;
+      CustFull_MR = s.field02;
+      FrequencyRequest_MR = s.field06;
+      Incharge_MR = s.field07;
+      SubLeader_MR = s.field08;
+      GL_MR = s.field09;
+      JP_MR = s.field10;
+      DMG_MR = s.field11;
 
       context.read<FetchDataTable1Bloc_MR>().add(DataSequncePage1_MR.select);
-      _ConsoleBox(s, context, zeroDropDownData);
+      _ConsoleBox(s, context, widget.dropdowndata);
     }
 
     void _CallYNPopup(
@@ -353,7 +364,7 @@ class _DataListTableState extends State<DataListTable> {
                       );
 
                       BlocProvider.of<BlocPageRebuild>(context).rebuildPage();
-                      _ConsoleBox(Zerodata, context, zeroDropDownData);
+                      _ConsoleBox(Zerodata, context, widget.dropdowndata);
                     },
                     nWidth: 134),
               ),
@@ -380,21 +391,23 @@ class _DataListTableState extends State<DataListTable> {
                 _getDataColumn(
                     3, "CustFull", 'Sort Field 3', nDataColumnWidth, tapSort),
                 _getDataColumn(
-                    4, "Branch", 'Sort Field 4', nDataColumnWidth, tapSort),
+                    4, "CustShort", 'Sort Field 4', nDataColumnWidth, tapSort),
                 _getDataColumn(
-                    5, "Code", 'Sort Field 5', nDataColumnWidth, tapSort),
-                _getDataColumn(6, "FrequencyRequest", 'Sort Field 6',
+                    5, "Branch", 'Sort Field 5', nDataColumnWidth, tapSort),
+                _getDataColumn(
+                    6, "Code", 'Sort Field 6', nDataColumnWidth, tapSort),
+                _getDataColumn(7, "FrequencyRequest", 'Sort Field 7',
                     nDataColumnWidth, tapSort),
                 _getDataColumn(
-                    7, "Incharge", 'Sort Field 7', nDataColumnWidth, tapSort),
+                    8, "Incharge", 'Sort Field 8', nDataColumnWidth, tapSort),
                 _getDataColumn(
-                    8, "SubLeader", 'Sort Field 8', nDataColumnWidth, tapSort),
+                    9, "SubLeader", 'Sort Field 9', nDataColumnWidth, tapSort),
                 _getDataColumn(
-                    9, "GL", 'Sort Field 9', nDataColumnWidth, tapSort),
+                    10, "GL", 'Sort Field 10', nDataColumnWidth, tapSort),
                 _getDataColumn(
-                    10, "JP", 'Sort Field 10', nDataColumnWidth, tapSort),
+                    11, "JP", 'Sort Field 11', nDataColumnWidth, tapSort),
                 _getDataColumn(
-                    11, "DMG", 'Sort Field 11', nDataColumnWidth, tapSort),
+                    12, "DMG", 'Sort Field 12', nDataColumnWidth, tapSort),
                 _getBlankDataColumn(nDataColumnWidthIcon),
               ],
               // Cell Row  -----------------------------------------------------------
@@ -538,7 +551,7 @@ DataRow _getDataRow(
         _getDataCell_Label(field08, nDataColumnWidth),
         _getDataCell_Label(field09, nDataColumnWidth),
         _getDataCell_Label(field10, nDataColumnWidth),
-        // _getDataCell_Label(field11, nDataColumnWidth),
+        _getDataCell_Label(field11, nDataColumnWidth),
         // _getDataCell_Label(field12, nDataColumnWidth),
         // _getDataCell_Label(field13, nDataColumnWidth),
         // _getDataCell_Label(field14, nDataColumnWidth),
@@ -639,12 +652,20 @@ DataCell _getDataCell_Icon(
 }
 
 void _ConsoleBox(MainStrucTableTap1_MR input, BuildContext contextinput,
-    DropDownData dropdowndata) {
+    DropDownData_MR dropdowndata) {
   showDialog(
     context: contextinput,
     barrierDismissible: true,
     builder: (BuildContext context) {
-      // DropDownData _datadropdown = dropdowndata;
+      DropDownData_MR _datadropdown = dropdowndata;
+
+      List<String> _list1 = _datadropdown.list01;
+      List<String> _list2 = _datadropdown.list02;
+      List<String> _list3 = _datadropdown.list03;
+      List<String> _list4 = _datadropdown.list04;
+      List<String> _list5 = _datadropdown.list05;
+      List<String> _list6 = _datadropdown.list06;
+      List<String> _list7 = _datadropdown.list07;
       return Dialog(
         child: SingleChildScrollView(
           scrollDirection: Axis.horizontal,
@@ -712,6 +733,7 @@ void _ConsoleBox(MainStrucTableTap1_MR input, BuildContext contextinput,
                             height: 40,
                             // color: Colors.red,
                             child: ComInputText(
+                                isEnabled: false,
                                 isContr: undercontroltap1_MR,
                                 fnContr: (input) {
                                   undercontroltap1_MR = input;
@@ -728,33 +750,38 @@ void _ConsoleBox(MainStrucTableTap1_MR input, BuildContext contextinput,
                                 alignment: Alignment.centerLeft,
                                 child: Text("CustFull")),
                           ),
-                          Container(
+                          AdvanceDropDown(
                             width: 400,
                             height: 40,
-                            // color: Colors.red,
-                            child: ComInputText(
-                              isContr: undercontroltap1_MR,
-                              fnContr: (input) {
-                                undercontroltap1_MR = input;
-                              },
-                              sValue: EditDataTable1_MR.field02,
-                              returnfunc: (String s) {
-                                EditDataTable1buffer_MR.field02 = s;
-                              },
-                            ),
+                            value: CustFull_MR,
+                            onChangeinside: (newValue) {
+                              CustFull_MR = newValue!;
+                              EditDataTable1buffer_MR.field02 = newValue;
+                              undercontroltap1_MR = true;
+                              _onLoading(
+                                  contextinput,
+                                  contextinput
+                                      .read<CallDropdowndata_MR>()
+                                      .add(calldropdownrequrst_MR.set01_1));
+
+                              BlocProvider.of<BlocPageRebuild>(contextinput)
+                                  .rebuildPage();
+                            },
+                            listdropdown: _list1,
                           ),
                           SizedBox(
                             width: 400,
                             height: 15,
                             child: Align(
                                 alignment: Alignment.centerLeft,
-                                child: Text("Branch")),
+                                child: Text("CustShort")),
                           ),
                           Container(
                             width: 400,
                             height: 40,
                             // color: Colors.red,
                             child: ComInputText(
+                              isEnabled: false,
                               isContr: undercontroltap1_MR,
                               fnContr: (input) {
                                 undercontroltap1_MR = input;
@@ -770,13 +797,14 @@ void _ConsoleBox(MainStrucTableTap1_MR input, BuildContext contextinput,
                             height: 15,
                             child: Align(
                                 alignment: Alignment.centerLeft,
-                                child: Text("Code")),
+                                child: Text("Branch")),
                           ),
                           Container(
                             width: 400,
                             height: 40,
                             // color: Colors.red,
                             child: ComInputText(
+                              isEnabled: false,
                               isContr: undercontroltap1_MR,
                               fnContr: (input) {
                                 undercontroltap1_MR = input;
@@ -792,13 +820,14 @@ void _ConsoleBox(MainStrucTableTap1_MR input, BuildContext contextinput,
                             height: 15,
                             child: Align(
                                 alignment: Alignment.centerLeft,
-                                child: Text("FrequencyRequest")),
+                                child: Text("Code")),
                           ),
                           Container(
                             width: 400,
                             height: 40,
                             // color: Colors.red,
                             child: ComInputText(
+                              isEnabled: false,
                               isContr: undercontroltap1_MR,
                               fnContr: (input) {
                                 undercontroltap1_MR = input;
@@ -826,22 +855,38 @@ void _ConsoleBox(MainStrucTableTap1_MR input, BuildContext contextinput,
                             height: 15,
                             child: Align(
                                 alignment: Alignment.centerLeft,
-                                child: Text("Incharge")),
+                                child: Text("FrequencyRequest")),
                           ),
-                          Container(
+                          AdvanceDropDown(
                             width: 400,
                             height: 40,
-                            // color: Colors.red,
-                            child: ComInputText(
-                              isContr: undercontroltap1_MR,
-                              fnContr: (input) {
-                                undercontroltap1_MR = input;
-                              },
-                              sValue: EditDataTable1_MR.field06,
-                              returnfunc: (String s) {
-                                EditDataTable1buffer_MR.field06 = s;
-                              },
-                            ),
+                            value: FrequencyRequest_MR,
+                            onChangeinside: (newValue) {
+                              FrequencyRequest_MR = newValue!;
+                              EditDataTable1buffer_MR.field06 = newValue;
+                              BlocProvider.of<BlocPageRebuild>(contextinput)
+                                  .rebuildPage();
+                            },
+                            listdropdown: _list2,
+                          ),
+                          SizedBox(
+                            width: 400,
+                            height: 15,
+                            child: Align(
+                                alignment: Alignment.centerLeft,
+                                child: Text("Incharge")),
+                          ),
+                          AdvanceDropDown(
+                            width: 400,
+                            height: 40,
+                            value: Incharge_MR,
+                            onChangeinside: (newValue) {
+                              Incharge_MR = newValue!;
+                              EditDataTable1buffer_MR.field07 = newValue;
+                              BlocProvider.of<BlocPageRebuild>(contextinput)
+                                  .rebuildPage();
+                            },
+                            listdropdown: _list3,
                           ),
                           SizedBox(
                             width: 400,
@@ -850,19 +895,17 @@ void _ConsoleBox(MainStrucTableTap1_MR input, BuildContext contextinput,
                                 alignment: Alignment.centerLeft,
                                 child: Text("SubLeader")),
                           ),
-                          Container(
+                          AdvanceDropDown(
                             width: 400,
                             height: 40,
-                            // color: Colors.red,
-                            child: ComInputText(
-                                isContr: undercontroltap1_MR,
-                                fnContr: (input) {
-                                  undercontroltap1_MR = input;
-                                },
-                                sValue: EditDataTable1_MR.field07,
-                                returnfunc: (String s) {
-                                  EditDataTable1buffer_MR.field07 = s;
-                                }),
+                            value: SubLeader_MR,
+                            onChangeinside: (newValue) {
+                              SubLeader_MR = newValue!;
+                              EditDataTable1buffer_MR.field08 = newValue;
+                              BlocProvider.of<BlocPageRebuild>(contextinput)
+                                  .rebuildPage();
+                            },
+                            listdropdown: _list4,
                           ),
                           SizedBox(
                             width: 400,
@@ -871,20 +914,17 @@ void _ConsoleBox(MainStrucTableTap1_MR input, BuildContext contextinput,
                                 alignment: Alignment.centerLeft,
                                 child: Text("GL")),
                           ),
-                          Container(
+                          AdvanceDropDown(
                             width: 400,
                             height: 40,
-                            // color: Colors.red,
-                            child: ComInputText(
-                              isContr: undercontroltap1_MR,
-                              fnContr: (input) {
-                                undercontroltap1_MR = input;
-                              },
-                              sValue: EditDataTable1_MR.field08,
-                              returnfunc: (String s) {
-                                EditDataTable1buffer_MR.field08 = s;
-                              },
-                            ),
+                            value: GL_MR,
+                            onChangeinside: (newValue) {
+                              GL_MR = newValue!;
+                              EditDataTable1buffer_MR.field09 = newValue;
+                              BlocProvider.of<BlocPageRebuild>(contextinput)
+                                  .rebuildPage();
+                            },
+                            listdropdown: _list5,
                           ),
                           SizedBox(
                             width: 400,
@@ -893,20 +933,17 @@ void _ConsoleBox(MainStrucTableTap1_MR input, BuildContext contextinput,
                                 alignment: Alignment.centerLeft,
                                 child: Text("JP")),
                           ),
-                          Container(
+                          AdvanceDropDown(
                             width: 400,
                             height: 40,
-                            // color: Colors.red,
-                            child: ComInputText(
-                              isContr: undercontroltap1_MR,
-                              fnContr: (input) {
-                                undercontroltap1_MR = input;
-                              },
-                              sValue: EditDataTable1_MR.field09,
-                              returnfunc: (String s) {
-                                EditDataTable1buffer_MR.field09 = s;
-                              },
-                            ),
+                            value: JP_MR,
+                            onChangeinside: (newValue) {
+                              JP_MR = newValue!;
+                              EditDataTable1buffer_MR.field10 = newValue;
+                              BlocProvider.of<BlocPageRebuild>(contextinput)
+                                  .rebuildPage();
+                            },
+                            listdropdown: _list6,
                           ),
                           SizedBox(
                             width: 400,
@@ -915,42 +952,17 @@ void _ConsoleBox(MainStrucTableTap1_MR input, BuildContext contextinput,
                                 alignment: Alignment.centerLeft,
                                 child: Text("DMG")),
                           ),
-                          Container(
+                          AdvanceDropDown(
                             width: 400,
                             height: 40,
-                            // color: Colors.red,
-                            child: ComInputText(
-                              isContr: undercontroltap1_MR,
-                              fnContr: (input) {
-                                undercontroltap1_MR = input;
-                              },
-                              sValue: EditDataTable1_MR.field10,
-                              returnfunc: (String s) {
-                                EditDataTable1buffer_MR.field10 = s;
-                              },
-                            ),
-                          ),
-                          SizedBox(
-                            width: 400,
-                            height: 15,
-                            // child: Align(
-                            //     alignment: Alignment.centerLeft,
-                            //     child: Text("ROLE ID")),
-                          ),
-                          Container(
-                            width: 400,
-                            height: 40,
-                            // color: Colors.red,
-                            // child: ComInputText(
-                            //   isContr: undercontroltap1_MR,
-                            //   fnContr: (input) {
-                            //     undercontroltap1_MR = input;
-                            //   },
-                            //   sValue: EditDataTable1_MR.field11,
-                            //   returnfunc: (String s) {
-                            //     EditDataTable1buffer_MR.field11 = s;
-                            //   },
-                            // ),
+                            value: DMG_MR,
+                            onChangeinside: (newValue) {
+                              DMG_MR = newValue!;
+                              EditDataTable1buffer_MR.field11 = newValue;
+                              BlocProvider.of<BlocPageRebuild>(contextinput)
+                                  .rebuildPage();
+                            },
+                            listdropdown: _list7,
                           ),
                         ],
                       ),

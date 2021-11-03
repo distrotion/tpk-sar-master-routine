@@ -6,6 +6,17 @@ bool undercontroltap3_MR = false;
 final int nTableCellPerEachPageTable3_MR = 5;
 final int nNumToShowArrowAtPageTable3_MR = 5; //show < > when more than 5 page
 
+String CustFull3_MR = '';
+String SampleGroup3_MR = '';
+String SampleType3_MR = '';
+String SampleTank3_MR = '';
+String SampleName3_MR = '';
+String Frequency3_MR = '';
+String Instrument3_MR = '';
+String ItemName3_MR = '';
+String Position3_MR = '';
+String Temp3_MR = '';
+
 MainStrucTableTap3_MR EditDataTable3_MR = MainStrucTableTap3_MR(
   number: "",
   field01: "",
